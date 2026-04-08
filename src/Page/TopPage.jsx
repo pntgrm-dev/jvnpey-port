@@ -1,5 +1,6 @@
 import React from 'react'
 import useWorkStore from '../Store/getWorks'
+import Card from '../Card'
 import PageComponent from '../PageComponent'
 
 const TopPage = () => {
