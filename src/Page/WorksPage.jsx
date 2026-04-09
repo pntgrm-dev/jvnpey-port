@@ -22,7 +22,7 @@ const WorksPage = () => {
     : works;
 
   return (
-    <PageComponent title={category ? `Works / ${category}` : "Works"}>
+    <PageComponent title={category ? `${category}` : "Works"}>
       <div className="works-list">
         {isLoading && (
           <div className="text-white p-4 text-center">Loading works...</div>

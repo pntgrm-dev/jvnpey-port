@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router'
+import useProfileStore from './Store/getProfile'
 
 const Header = () => {
+  const { profile, fetchProfile } = useProfileStore();
+
+  useEffect(() => {
+    fetchProfile();
+  }, [fetchProfile]);
+
   return (
-    <header className=' sticky top-0 left-0 right-0 z-50'>
-      <div className="title text-md font-bold mx-2 my-2">
+    <header className='sticky top-0 left-0 right-0 z-50'>
+      <div className="title text-[10px] font-bold mx-4 my-4">
         <Link to="/">
-          Jvnpey
+          {profile?.logo?.url ? (
+            <img src={profile.logo.url} alt="" className='w-auto h-15' />
+          ) : (
+             "Jvnpey"
+          )}
         </Link>
       </div>
     </header>

@@ -17,8 +17,8 @@ const Nav = () => {
   }).filter(Boolean))];
 
   return (
-    <nav className="my-2 mx-2 py-2 border border-gray-300">
-      <div className="menu text-left text-sm">
+    <nav className="my-2 mx-2 ">
+      <div className="menu text-left text-[10px]">
         <ul className="flex flex-row md:flex-col justify-between items-left md:ml-2">
           <li className="mx-auto md:mx-0">
             <Link to="/CV">CV</Link>
