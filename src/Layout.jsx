@@ -19,25 +19,28 @@ const Layout = () => {
 
   const backgroundUrl = profile?.backgroundImage?.url || "";
   return (
-    <div className='relative min-h-screen'>
-      {/* 背景画像専用レイヤー（透けさせる） */}
-      <div 
-        className='fixed inset-0 bg-cover bg-center bg-fixed opacity-5 -z-10'
-        style={{ backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : 'none' }}
+    <div className="relative h-screen flex flex-col overflow-hidden">
+      {/* 背景画像専用レイヤー */}
+      <div
+        className="fixed inset-0 bg-cover bg-center bg-fixed opacity-20 -z-10"
+        style={{
+          backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : "none",
+        }}
       />
-      
-      <Header />
-      <div className='main grid grid-cols-1 md:grid-cols-8 min-h-[calc(100vh-100px)]'>
-        <div className='col-span-1 md:col-span-1'>
-          <Nav />
-        </div>
-        <div className='col-span-1 md:col-span-7'>
-          <Body />
-        </div>
+      <div className="flex flex-col h-full">
+        <Header />
+        <main className="flex-grow grid grid-cols-1 md:grid-cols-12 w-full overflow-hidden">
+          <div className="col-span-1 md:col-span-1 overflow-y-auto">
+            <Nav />
+          </div>
+          <div className="col-span-1 md:col-span-11 overflow-y-auto">
+            <Body />
+          </div>
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </div>
-    )
+  );
 }
 
 export default Layout

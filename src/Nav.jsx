@@ -17,20 +17,20 @@ const Nav = () => {
   }).filter(Boolean))];
 
   return (
-    <nav className="my-2 mx-2 ">
+    <nav className="my-2 ml-5 ">
       <div className="menu text-left text-[10px]">
-        <ul className="flex flex-row md:flex-col justify-between items-left md:ml-2">
+        <ul className="flex flex-row md:flex-col justify-between items-left">
           <li className="mx-auto md:mx-0">
             <Link to="/CV">CV</Link>
+          </li>
+          <li className="mx-auto md:mx-0">
+            <Link to="/contact">Contact</Link>
           </li>
           {categories.map((cat) => (
             <li key={cat} className="mx-auto md:mx-0">
               <Link to={`/${cat}`}>{cat}</Link>
             </li>
           ))}
-          <li className="mx-auto md:mx-0">
-            <Link to="/contact">Contact</Link>
-          </li>
         </ul>
       </div>
     </nav>

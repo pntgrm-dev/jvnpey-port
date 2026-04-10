@@ -25,10 +25,10 @@ const WorksPage = () => {
     <PageComponent title={category ? `${category}` : "Works"}>
       <div className="works-list">
         {isLoading && (
-          <div className="text-white p-4 text-center">Loading works...</div>
+          <div className="p-4 text-center">Loading works...</div>
         )}
         {error && (
-          <div className="text-red-500 p-4 text-center">Error: {error}</div>
+          <div className="p-4 text-center">Error: {error}</div>
         )}
         {!isLoading && !error && (
           filteredWorks.length > 0 ? (
@@ -39,7 +39,7 @@ const WorksPage = () => {
               />
             ))
           ) : (
-            <div className="text-white p-4 text-center">表示できる作品がありません。</div>
+            <div className="p-4 text-center">表示できる作品がありません。</div>
           )
         )}
       </div>

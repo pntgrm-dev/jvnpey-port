@@ -19,7 +19,7 @@ const CVPage = () => {
           <div className="text-red-500 p-4 text-center">Error: {error}</div>
         )}
         {!isLoading && !error && profile && (
-          <div className="space-y-1 text-[10px]">
+          <div className="space-y-1 text-[10px] w-[200px]">
             <div className="flex justify-start">
               <img src={profile.icon.url} alt="" className="logo w-20 h-20" />
             </div>

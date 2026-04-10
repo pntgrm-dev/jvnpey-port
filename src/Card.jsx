@@ -8,7 +8,7 @@ const Card = ({ title, date, img, name, description, link }) => {
   const imageUrl = Array.isArray(img) ? img[0]?.url : img?.url || "/assets/image.jpg";
   return (
     <div 
-      className="card grid grid-cols-1 md:grid-cols-4 gap-4 p-4 mx-2"
+      className="card grid grid-cols-1 md:grid-cols-4 gap-4"
       // style={{ transform: `rotate(${randomRotation}deg)` }}
     >
       <div className="cover col-span-1 md:col-span-2 overflow-hidden">

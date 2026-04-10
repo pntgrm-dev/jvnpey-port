@@ -11,12 +11,10 @@ const Header = () => {
 
   return (
     <header className='sticky top-0 left-0 right-0 z-50'>
-      <div className="title text-[10px] font-bold mx-4 my-4">
+      <div className="title text-[10px] font-bold mx-4 ">
         <Link to="/">
-          {profile?.logo?.url ? (
-            <img src={profile.logo.url} alt="" className='w-auto h-15' />
-          ) : (
-             "Jvnpey"
+          {profile?.logo?.url && (
+            <img src={profile.logo.url} alt="" className='w-auto h-15 opacity-80' />
           )}
         </Link>
       </div>
