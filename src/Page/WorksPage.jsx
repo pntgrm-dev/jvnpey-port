@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import useWorkStore from '../Store/getWorks'
 import Card from '../Card'
+import CardVideo from '../CardVideo'
 import PageComponent from '../PageComponent'
 import { useParams } from 'react-router'
 
@@ -32,12 +33,19 @@ const WorksPage = () => {
         )}
         {!isLoading && !error && (
           filteredWorks.length > 0 ? (
-            filteredWorks.map((work) => (
-              <Card
-                key={work.id}
-                {...work}
-              />
-            ))
+            filteredWorks.map((work) => {
+              const workCats = Array.isArray(work.category) ? work.category : [work.category];
+              const isVideo = workCats.some(cat => 
+                (typeof cat === 'string' && cat.toLowerCase() === 'video') ||
+                (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'video')
+              );
+
+              return isVideo ? (
+                <CardVideo key={work.id} {...work} />
+              ) : (
+                  <List key={work.id} {...work} />
+              )
+            })
           ) : (
             <div className="p-4 text-center">表示できる作品がありません。</div>
           )

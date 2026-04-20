@@ -2,10 +2,11 @@
 
 @theme {
   --font-size-xsm: 0.625rem; /* 10px */
+  --spacing-1080: 1080px;
 }
     body {
       background-color: #ffffff;
-      color: #525252;
+      color: #000000;
       margin: 0;
       padding: 0;
       box-sizing: border-box;

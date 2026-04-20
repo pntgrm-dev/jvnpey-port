@@ -17,7 +17,7 @@ const Nav = () => {
   }).filter(Boolean))];
 
   return (
-    <nav className="my-2 ml-5 ">
+    <nav className="ml-0 md:ml-6 md:m-auto">
       <div className="menu text-left text-[10px]">
         <ul className="flex flex-row md:flex-col justify-between items-left">
           <li className="mx-auto md:mx-0">

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router'
-import Card from './Card'
+import List from './list'
 import Nav from './Nav'
 import useWorkStore from './Store/getWorks'
 import Footer from './Footer'
@@ -29,7 +29,7 @@ const Layout = () => {
       />
       <div className="flex flex-col h-full">
         <Header />
-        <main className="flex-grow grid grid-cols-1 md:grid-cols-12 w-full overflow-hidden">
+        <main className="flex-grow grid grid-cols-1 grid-rows-[auto_1fr] md:grid-rows-none md:grid-cols-12 w-full overflow-hidden">
           <div className="col-span-1 md:col-span-1 overflow-y-auto">
             <Nav />
           </div>
