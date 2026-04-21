@@ -56,7 +56,7 @@ const CardVideo = (props) => {
             {title}
           </div>
         </Link>
-        <div className="date text-[12px] opacity-30 font-serif italic mx-auto ">
+        <div className="date text-[12px] opacity-30 mx-auto ">
           {date?.slice(0, 4)}
         </div>
         <div className="toggle mx-auto">
