@@ -22,7 +22,7 @@ const DetailPage = () => {
   return (
     <PageComponent title={work.title}>
       <div className="space-y-6">
-        <div className="cover max-w-lg mx-auto">
+        <div className="cover max-w-lg ">
           <img
             src={imageUrl}
             alt={work.title}
