@@ -27,9 +27,11 @@ const Nav = () => {
   return (
     <nav className="md:border-r border-black-300 py-2 md:px-2 h-auto md:h-full border-b md:border-b-0 px-2">
       <div className="menu text-left text-[10px] font-family-handwriting">
-        <ul className="flex flex-row md:flex-col justify-between items-left ">
+        <ul className="flex flex-row md:grid md:grid-cols-5 gap-2">
           <NavItem to="/CV">CV</NavItem>
-          <li><a href="mailto:example@example.com">Contact</a></li>
+          <li className="mx-auto md:mx-0 border-none md:border-l border-black-300">
+            <a href="mailto:example@example.com">Contact</a>
+          </li>
           {categories.map((cat) => (
             <NavItem key={cat} to={`/${cat}`}>
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
