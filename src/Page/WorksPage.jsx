@@ -14,13 +14,14 @@ const WorksPage = () => {
     if (works.length === 0) fetchWorks();
   }, [fetchWorks, works.length]);
 
-  const filteredWorks = category
+  const filteredWorks = (category
     ? works.filter((work) => {
         // カテゴリー配列の中に選択されたものが含まれているかチェック
         const workCats = Array.isArray(work.category) ? work.category : [work.category];
         return workCats.some(cat => cat.toLowerCase() === category.toLowerCase());
       })
-    : works;
+    : works
+  ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <PageComponent title={category ? `${category}` : "Works"}>

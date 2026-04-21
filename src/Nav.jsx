@@ -26,7 +26,7 @@ const Nav = () => {
 
   return (
     <nav className="md:border-r border-black-300 py-2 md:px-2 h-auto md:h-full border-b md:border-b-0 px-2">
-      <div className="menu text-left text-[10px]">
+      <div className="menu text-left text-[10px] font-family-handwriting">
         <ul className="flex flex-row md:flex-col justify-between items-left ">
           <NavItem to="/CV">CV</NavItem>
           <li><a href="mailto:example@example.com">Contact</a></li>

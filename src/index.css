@@ -1,8 +1,11 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
 @theme {
   --font-size-xsm: 0.625rem; /* 10px */
   --spacing-1080: 1080px;
+  --font-family-handwriting: "Gloria Hallelujah", cursive;
 }
     body {
       background-color: #cacbcc;
