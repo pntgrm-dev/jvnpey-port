@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 
 // YouTubeのURLまたはHTML(iframe)からIDを確実に抽出する関数
@@ -20,12 +20,15 @@ const getYoutubeId = (url, html) => {
 };
 
 const CardVideo = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { id, category, title, date, description } = props;
   
   const videoLink = props.link || props.youtubelink || props.url;
   
   const catName = Array.isArray(category) ? category[0] : (typeof category === 'object' ? category?.name : category) || 'works';
   const youtubeId = getYoutubeId(videoLink, description);
+  
+  const handleToggle = () => setIsOpen(!isOpen);
 
   return (
     <div className="card mb-8 w-full max-w-[720px] mx-auto group p-2 border border-black-300">
@@ -46,17 +49,27 @@ const CardVideo = (props) => {
           Video link not found
         </div>
       )}
-      <div className="text-area text-left flex gap-4 items-baseline justify-between px-1">
+
+      <div className="text-area text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px]">
         <Link to={`/${catName}/${id}`} className="hover:underline">
-          <div className="title text-[10px] uppercase tracking-[0.2em] font-medium px-4">
+          <div className="title text-[10px] font-medium ">
             {title}
           </div>
         </Link>
-        <div className="date text-[10px] opacity-30 font-serif italic px-4">
+        <div className="date text-[10px] opacity-30 font-serif italic mx-auto ">
           {date?.slice(0, 4)}
         </div>
+        <div className="toggle mx-auto">
+          <i class="fa-solid fa-angle-down text-[10px]" onClick={handleToggle}></i>
+        </div>
       </div>
-    </div>
+
+      <div className="textArea py-1"></div>
+        {isOpen && (
+          <div className="text-[10px] " dangerouslySetInnerHTML={{ __html: description }}>
+          </div>
+        )}
+      </div>
   );
 };
 

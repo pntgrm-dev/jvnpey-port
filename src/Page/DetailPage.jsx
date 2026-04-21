@@ -21,22 +21,23 @@ const DetailPage = () => {
 
   return (
     <PageComponent title={work.title}>
-      <div className="space-y-6">
-        <div className="cover max-w-lg ">
+      <div className="">
+        <div className="cover max-w-lg my-2">
           <img
             src={imageUrl}
             alt={work.title}
             className="w-full h-auto"
           />
         </div>
-        <div className="text-area px-2">
-          <div className="date text-[10px] mb-4 text-gray-400">{work.date?.slice(0, 10)}</div>
+        <div className="text-area ">
+          <div className="title text-md font-bold ">{work.title}</div>
+          <div className="date text-[10px] mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
           <div
             className="description leading-relaxed text-[10px]"
             dangerouslySetInnerHTML={{ __html: work.description }}
           />
           {work.link && (
-            <div className="links mt-8 pt-4 border-t border-black/10 text-[10px]">
+            <div className="links mt-2 pt-2  border-black/10 text-[10px] text-right">
               <a href={work.link} target="_blank" rel="noopener noreferrer" className="hover:underline opacity-60">
                 Link: {work.link}
               </a>
