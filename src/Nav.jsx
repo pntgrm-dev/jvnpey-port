@@ -19,17 +19,17 @@ const Nav = () => {
   console.log('Extracted categories:', categories); // デバッグ用ログ
 
   const NavItem = ({ to, children }) => (
-    <li className="mx-auto md:mx-0 border-none md:border-l border-border-primary">
+    <li className="mx-auto md:mx-0 border-none">
       <Link to={to}>{children}</Link>
     </li>
   );
 
   return (
-    <nav className="md:border-r border-border-primary py-2 md:px-2 h-auto md:h-full border-b md:border-b-0 px-2">
+    <nav className="section-border-bottom section-border-right-md section-border-bottom-none-md py-2 md:px-2 h-auto md:h-full px-2">
       <div className="menu text-left text-[10px] font-family-handwriting">
         <ul className="flex flex-row md:flex md:flex-col gap-2">
           <NavItem to="/CV">CV</NavItem>
-          <li className="mx-auto md:mx-0 border-none md:border-l border-border-primary">
+          <li className="mx-auto md:mx-0 border-none">
             <a href="mailto:example@example.com">Contact</a>
           </li>
           {categories.map((cat) => (
