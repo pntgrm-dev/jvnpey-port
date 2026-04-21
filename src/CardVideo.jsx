@@ -31,7 +31,7 @@ const CardVideo = (props) => {
   const handleToggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="card mb-8 w-full max-w-[720px] mx-auto group border border-black-300">
+    <div className="card mb-8 w-full max-w-[720px] mx-auto group border border-[#393542]">
       {youtubeId ? (
         <div className="video-embed aspect-video overflow-hidden border bg-[#cacbcc]">
           <iframe
@@ -50,7 +50,7 @@ const CardVideo = (props) => {
         </div>
       )}
 
-      <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px] bg-[#6b7557]">
+      <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px] bg-[#6b7557] border border-[#393542]">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px] font-medium ">
             {title}
@@ -63,9 +63,9 @@ const CardVideo = (props) => {
           <i class="fa-solid fa-angle-down text-[10px]" onClick={handleToggle}></i>
         </div>
       </div>
-      <div className="textArea "></div>
+      <div className="textArea]"></div>
         {isOpen && (
-          <div className="text-[10px] p-2 " dangerouslySetInnerHTML={{ __html: description }}>
+          <div className="text-[10px] p-2 border border-[#393542" dangerouslySetInnerHTML={{ __html: description }}>
           </div>
         )}
       </div>
