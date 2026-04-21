@@ -9,7 +9,7 @@ const List = ({ id, category, title, date }) => {
     <div className="card gap-4">
       <div className="text-area text-left col-span-1 md:col-span-2 flex gap-1">
         <Link to={`/${catName}/${id}`} className="hover:underline">
-          <div className="title text-[10px]">{title}</div>
+          <div className="title text-[14px]">{title}</div>
         </Link>
         {/* <div className="date text-[10px]">,{date?.slice(0, 4)}</div> */}
       </div>
