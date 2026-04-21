@@ -63,7 +63,7 @@ const CardVideo = (props) => {
           <i class="fa-solid fa-angle-down text-[10px]" onClick={handleToggle}></i>
         </div>
       </div>
-      <div className="textArea]"></div>
+      <div className="textArea py-auto"></div>
         {isOpen && (
           <div className="text-[10px] p-2 border border-[#393542" dangerouslySetInnerHTML={{ __html: description }}>
           </div>

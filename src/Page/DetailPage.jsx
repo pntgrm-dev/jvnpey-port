@@ -23,11 +23,15 @@ const DetailPage = () => {
     <PageComponent title={work.title}>
       <div className="">
         <div className="cover max-w-lg my-2">
-          <img
-            src={imageUrl}
-            alt={work.title}
-            className="w-full h-auto"
-          />
+          {imageUrl && imageUrl !== "/assets/image.jpg" ? (
+            <img
+              src={imageUrl}
+              alt={work.title}
+              className="w-full h-auto"
+            />
+          ) : (
+            <div></div>
+          )}
         </div>
         <div className="text-area ">
           <div className="title text-md font-bold ">{work.title}</div>
