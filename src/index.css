@@ -6,6 +6,25 @@
   --font-size-xsm: 0.625rem; /* 10px */
   --spacing-1080: 1080px;
   --font-family-handwriting: "Gloria Hallelujah", cursive;
+  --color-border-primary: #393542;
+  --color-border-secondary: #393542;
+  --border-width-default: 4px;
+  --border-width-thick: 4px;
+}
+
+@layer utilities {
+  .border-primary {
+    @apply border border-border-primary;
+  }
+  
+  .border-primary-thick {
+    @apply border-border-primary;
+    border-width: var(--border-width-thick);
+  }
+  
+  .border-secondary {
+    @apply border border-border-secondary;
+  }
 }
     body {
       background-color: #cacbcc;

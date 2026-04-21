@@ -10,7 +10,7 @@ const Header = () => {
   }, [fetchProfile]);
 
   return (
-    <header className='sticky top-0 left-0 right-0 z-50 border-b border-black-300'>
+    <header className='sticky top-0 left-0 right-0 z-50 border-b border-border-primary'>
       <div className="title text-[10px] font-bold mx-2 ">
         <Link to="/">
           {profile?.logo?.url && (
