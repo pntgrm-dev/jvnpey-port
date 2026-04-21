@@ -36,13 +36,13 @@ const DetailPage = () => {
             className="description leading-relaxed text-[10px]"
             dangerouslySetInnerHTML={{ __html: work.description }}
           />
-          {work.link && (
+          {/* {work.link && (
             <div className="links mt-2 pt-2  border-black/10 text-[10px] text-right">
               <a href={work.link} target="_blank" rel="noopener noreferrer" className="hover:underline opacity-60">
                 Link: {work.link}
               </a>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </PageComponent>
