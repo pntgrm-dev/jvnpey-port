@@ -50,7 +50,7 @@ const CardVideo = (props) => {
         </div>
       )}
 
-      <div className="text-area text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px]">
+      <div className="text-area text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px] bg-[#6b7557]">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px] font-medium ">
             {title}
@@ -63,7 +63,6 @@ const CardVideo = (props) => {
           <i class="fa-solid fa-angle-down text-[10px]" onClick={handleToggle}></i>
         </div>
       </div>
-
       <div className="textArea py-1"></div>
         {isOpen && (
           <div className="text-[10px] " dangerouslySetInnerHTML={{ __html: description }}>

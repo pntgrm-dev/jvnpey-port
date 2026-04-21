@@ -11,7 +11,6 @@ const Body = () => {
     <div>
       <Routes>
         <Route path="/" element={<TopPage />} />
-        <Route path="/works" element={<WorksPage />} />
         <Route path="/:category/:id" element={<DetailPage />} />
         <Route path="/:category" element={<WorksPage />} />
         <Route path="/contact" element={<ContactPage />} />

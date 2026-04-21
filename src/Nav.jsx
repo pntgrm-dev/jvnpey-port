@@ -16,6 +16,8 @@ const Nav = () => {
     return Array.isArray(work.category) ? work.category : [work.category];
   }).filter(Boolean))];
 
+  console.log('Extracted categories:', categories); // デバッグ用ログ
+
   const NavItem = ({ to, children }) => (
     <li className="mx-auto md:mx-0 border-none md:border-l border-black-300">
       <Link to={to}>{children}</Link>
