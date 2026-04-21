@@ -21,7 +21,7 @@ const DetailPage = () => {
 
   return (
     <PageComponent title={work.title}>
-      <div className="">
+      <div className='max-w-4xl'>
         <div className="cover max-w-lg my-2">
           {imageUrl && imageUrl !== "/assets/image.jpg" ? (
             <img
