@@ -28,7 +28,7 @@ const CardVideo = (props) => {
   const youtubeId = getYoutubeId(videoLink, description);
 
   return (
-    <div className="card mb-8 w-full max-w-[1080px] mx-auto group bg-[#6b7557] pb-2">
+    <div className="card mb-8 w-full max-w-[720px] mx-auto group p-2 border border-black-300">
       {youtubeId ? (
         <div className="video-embed aspect-video mb-2 overflow-hidden border border-black/5 bg-[#cacbcc]">
           <iframe
@@ -46,7 +46,7 @@ const CardVideo = (props) => {
           Video link not found
         </div>
       )}
-      <div className="text-area text-left flex gap-4 items-baseline px-1">
+      <div className="text-area text-left flex gap-4 items-baseline justify-between px-1">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px] uppercase tracking-[0.2em] font-medium px-4">
             {title}

@@ -21,12 +21,12 @@ const DetailPage = () => {
 
   return (
     <PageComponent title={work.title}>
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="cover">
+      <div className="space-y-6">
+        <div className="cover max-w-lg mx-auto">
           <img
             src={imageUrl}
             alt={work.title}
-            className="border border-gray-500 w-full h-auto"
+            className="w-full h-auto"
           />
         </div>
         <div className="text-area px-2">

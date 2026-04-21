@@ -29,11 +29,11 @@ const Layout = () => {
       />
       <div className="flex flex-col h-full">
         <Header />
-        <main className="flex-grow grid grid-cols-1 grid-rows-[auto_1fr] md:grid-rows-none md:grid-cols-12 w-full overflow-hidden">
-          <div className="col-span-1 md:col-span-1 overflow-y-auto">
+        <main className="flex-grow grid grid-cols-1 grid-rows-[auto_1fr] md:grid-rows-none md:grid-cols-[auto_1fr] w-full overflow-hidden min-h-0">
+          <div className="col-span-1 md:col-span-1 overflow-y-auto min-h-0">
             <Nav />
           </div>
-          <div className="col-span-1 md:col-span-11 overflow-y-auto">
+          <div className="col-span-1 md:col-span-1 overflow-y-auto min-h-0">
             <Body />
           </div>
         </main>

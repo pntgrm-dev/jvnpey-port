@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import useWorkStore from '../Store/getWorks'
-import Card from '../Card'
+import List from '../list'
 import CardVideo from '../CardVideo'
 import PageComponent from '../PageComponent'
 import { useParams } from 'react-router'

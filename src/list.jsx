@@ -6,8 +6,8 @@ const List = ({ id, category, title, date }) => {
   const catName = Array.isArray(category) ? category[0] : (typeof category === 'object' ? category?.name : category) || 'works';
 
   return (
-    <div className="card gap-4">
-      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-4 bg-[#cacbcc]">
+    <div className="card gap-4 ">
+      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-4">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px]">{title}</div>
         </Link>

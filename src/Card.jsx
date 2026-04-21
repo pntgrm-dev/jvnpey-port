@@ -7,11 +7,10 @@ const Card = ({ id, category, title, date }) => {
 
   return (
     <div className="card gap-4">
-      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-4 bg-[#cacbcc]">
+      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-4">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px]">{title}</div>
         </Link>
-        <div>{ children } </div>
       </div>
     </div>
   );

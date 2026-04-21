@@ -16,20 +16,22 @@ const Nav = () => {
     return Array.isArray(work.category) ? work.category : [work.category];
   }).filter(Boolean))];
 
+  const NavItem = ({ to, children }) => (
+    <li className="mx-auto md:mx-0 border-none md:border-l border-black-300">
+      <Link to={to}>{children}</Link>
+    </li>
+  );
+
   return (
-    <nav className="ml-0 md:ml-6 md:m-auto">
+    <nav className="md:border-r border-black-300 py-2 md:px-2 h-auto md:h-full border-b md:border-b-0 px-16">
       <div className="menu text-left text-[10px]">
-        <ul className="flex flex-row md:flex-col justify-between items-left">
-          <li className="mx-auto md:mx-0">
-            <Link to="/CV">CV</Link>
-          </li>
-          <li className="mx-auto md:mx-0">
-            <Link to="/contact">Contact</Link>
-          </li>
+        <ul className="flex flex-row md:flex-col justify-between items-left gap-2">
+          <NavItem to="/CV">CV</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
           {categories.map((cat) => (
-            <li key={cat} className="mx-auto md:mx-0">
-              <Link to={`/${cat}`}>{cat}</Link>
-            </li>
+            <NavItem key={cat} to={`/${cat}`}>
+              {cat}
+            </NavItem>
           ))}
         </ul>
       </div>
