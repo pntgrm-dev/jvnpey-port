@@ -22,10 +22,10 @@ const Layout = () => {
 
   const backgroundUrl = profile?.backgroundImage?.url || "";
   return (
-    <div className="relative h-screen flex flex-col overflow-hidden">
+    <div className="relative h-screen flex flex-col overflow-hidden ">
       {/* 背景画像専用レイヤー */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-fixed -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-fixed -z-10 opacity-20"
         style={{
           backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : "none",
         }}
