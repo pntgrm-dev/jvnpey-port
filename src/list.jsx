@@ -11,7 +11,7 @@ const List = ({ id, category, title, date }) => {
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[10px]">{title}</div>
         </Link>
-        <div className="date text-[10px]">,{date?.slice(0, 4)}</div>
+        {/* <div className="date text-[10px]">,{date?.slice(0, 4)}</div> */}
       </div>
     </div>
   );

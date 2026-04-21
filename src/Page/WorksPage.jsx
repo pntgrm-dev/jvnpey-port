@@ -23,6 +23,15 @@ const WorksPage = () => {
     : works
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  const groupedByYear = filteredWorks.reduce((acc, work) => {
+    const year = new Date(work.date).getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(work);
+    return acc;
+  }, {});
+
+  const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
+
   return (
     <PageComponent title={category ? `${category}` : "Works"}>
       <div className="works-list">
@@ -34,19 +43,27 @@ const WorksPage = () => {
         )}
         {!isLoading && !error && (
           filteredWorks.length > 0 ? (
-            filteredWorks.map((work) => {
-              const workCats = Array.isArray(work.category) ? work.category : [work.category];
-              const isVideo = workCats.some(cat => 
-                (typeof cat === 'string' && cat.toLowerCase() === 'video') ||
-                (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'video')
-              );
-
-              return isVideo ? (
-                <CardVideo key={work.id} {...work} />
-              ) : (
-                  <List key={work.id} {...work} />
-              )
-            })
+            sortedYears.map((year) => (
+              <div key={year} className="year-section mb-8">
+                <div className="year-header text-lg font-bold mb-4 pb-2 border-b border-black-300">
+                  {year}
+                </div>
+                <div className="year-works">
+                  {groupedByYear[year].map((work) => {
+                    const workCats = Array.isArray(work.category) ? work.category : [work.category];
+                    const isVideo = workCats.some(cat => 
+                      (typeof cat === 'string' && cat.toLowerCase() === 'video') ||
+                      (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'video')
+                    );
+                    return isVideo ? (
+                      <CardVideo key={work.id} {...work} />
+                    ) : (
+                      <List key={work.id} {...work} />
+                    )
+                  })}
+                </div>
+              </div>
+            ))
           ) : (
             <div className="p-4 text-center">表示できる作品がありません。</div>
           )
