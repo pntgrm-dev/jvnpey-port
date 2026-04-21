@@ -10,6 +10,7 @@ const useWorkStore = create((set) => ({
     try {
       const data = await client.get({
         endpoint: "works",
+        queries: { limit: 100 }
       });
       set({ works: data.contents, isLoading: false });
     } catch (error) {

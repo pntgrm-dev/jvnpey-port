@@ -17,6 +17,9 @@ const Layout = () => {
     fetchProfile();
   }, [fetchWorks, fetchProfile]);
 
+  console.log('Works in Layout:', works); // デバッグ用ログ
+  console.log('Profile in Layout:', profile); // デバッグ用ログ
+
   const backgroundUrl = profile?.backgroundImage?.url || "";
   return (
     <div className="relative h-screen flex flex-col overflow-hidden">
