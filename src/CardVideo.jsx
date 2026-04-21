@@ -45,27 +45,27 @@ const CardVideo = (props) => {
           ></iframe>
         </div>
       ) : (
-        <div className="no-video aspect-video mb-4 bg-gray-100 flex items-center justify-center text-[10px] opacity-20 p-4">
+        <div className="no-video aspect-video mb-4 bg-gray-100 flex items-center justify-center text-[12px] opacity-20 p-4">
           Video link not found
         </div>
       )}
 
       <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px] bg-[#6b7557] border border-border-secondary">
         <Link to={`/${catName}/${id}`} className="hover:underline">
-          <div className="title text-[10px] font-medium ">
+          <div className="title text-[12px] font-medium ">
             {title}
           </div>
         </Link>
-        <div className="date text-[10px] opacity-30 font-serif italic mx-auto ">
+        <div className="date text-[12px] opacity-30 font-serif italic mx-auto ">
           {date?.slice(0, 4)}
         </div>
         <div className="toggle mx-auto">
-          <i class="fa-solid fa-angle-down text-[10px]" onClick={handleToggle}></i>
+          <i class="fa-solid fa-angle-down text-[12px]" onClick={handleToggle}></i>
         </div>
       </div>
       <div className="textArea py-auto"></div>
         {isOpen && (
-          <div className="text-[10px] p-2 border border-border-secondary" dangerouslySetInnerHTML={{ __html: description }}>
+          <div className="text-[12px] p-2 border border-border-secondary" dangerouslySetInnerHTML={{ __html: description }}>
           </div>
         )}
       </div>
