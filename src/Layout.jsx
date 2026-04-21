@@ -22,7 +22,7 @@ const Layout = () => {
     <div className="relative h-screen flex flex-col overflow-hidden">
       {/* 背景画像専用レイヤー */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-fixed opacity-20 -z-10"
+        className="fixed inset-0 bg-cover bg-center bg-fixed -z-10"
         style={{
           backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : "none",
         }}
