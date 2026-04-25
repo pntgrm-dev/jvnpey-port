@@ -25,7 +25,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="self-start section-border-bottom section-border-right-md section-border-bottom-none-md py-2 md:px-4 h-auto px-4 bg-black text-white">
+    <nav className="self-start  py-2 md:px-4 h-full px-4 bg-black text-white">
       <div className="menu text-left text-[12px]">
         <ul className="flex flex-row md:flex-col items-start">
           <NavItem to="/CV">CV</NavItem>
