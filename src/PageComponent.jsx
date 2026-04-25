@@ -14,7 +14,7 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-      <div className='min-h-[calc(100vh-200px)] m-1 flex flex-col p-4'>
+      <div className='m-1 flex flex-col p-4 lg:min-w-lg lg:min-h-[calc(100vh-200px)] '>
           {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
           <div className='w-full mx-auto '>{children}</div>
           {id && (
