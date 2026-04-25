@@ -31,16 +31,19 @@ const Layout = () => {
         }}
       />
       <div className="flex flex-col h-full">
-        <Header />
-        <main className="flex-grow grid grid-cols-1 md:grid-cols-[auto_1fr_auto] w-full overflow-hidden min-h-0">
-          <div className="col-span-1 overflow-y-auto min-h-0">
+        <Nav/>
+        <main className="flex-grow grid grid-cols-[auto_1fr_auto] w-full overflow-hidden min-h-0">
+          {/* <div className="col-span-1 overflow-y-auto min-h-0">
             <Nav />
+          </div> */}
+            <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
+            <div className="frame w-[30px] md:w-[60px] h-full bg-black"></div>
           </div>
-          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
+          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary mx-4 ">
             <Body />
           </div>
           <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
-            <div className="frame w-[60px] h-full bg-black"></div>
+            <div className="frame w-[30px] md:w-[60px] h-full bg-black"></div>
           </div>
         </main>
         <Footer />
