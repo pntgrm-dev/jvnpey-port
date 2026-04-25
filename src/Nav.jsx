@@ -25,7 +25,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="section-border-bottom section-border-right-md section-border-bottom-none-md py-4 md:px-4 h-auto md:h-full px-4">
+    <nav className="section-border-bottom section-border-right-md section-border-bottom-none-md py-4 md:px-4 h-auto md:h-full px-4 bg-black text-white">
       <div className="menu text-left text-[12px]">
         <ul className="flex flex-row md:flex md:flex-col gap-1">
           <NavItem to="/CV">CV</NavItem>
