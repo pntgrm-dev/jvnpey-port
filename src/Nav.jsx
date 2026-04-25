@@ -25,7 +25,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="self-start py-4 px-4 h-auto w-full md:px-4 bg-black text-white">
+    <nav className="self-start py-4 px-12 h-auto w-full md:px-32 bg-black text-white">
       <div className="menu text-left text-[12px]">
         <ul className="flex flex-row justify-between gap-2 ">
           <NavItem to="/CV">CV</NavItem>

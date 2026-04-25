@@ -39,7 +39,7 @@ const Layout = () => {
             <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
             <div className="frame w-[30px] md:w-[60px] h-full bg-black"></div>
           </div>
-          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary mx-4 ">
+          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary mx-4 rounded-lg">
             <Body />
           </div>
           <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
