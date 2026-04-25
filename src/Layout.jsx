@@ -22,7 +22,7 @@ const Layout = () => {
 
   const backgroundUrl = profile?.backgroundImage?.url || "";
   return (
-    <div className="relative h-screen flex flex-col overflow-hidden ">
+    <div className="relative min-h-screen flex flex-col">
       {/* 背景画像専用レイヤー */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-fixed -z-10 opacity-100"
@@ -30,19 +30,19 @@ const Layout = () => {
           backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : "none",
         }}
       />
-      <div className="flex flex-col h-full">
-        <Nav/>
-        <main className="flex-grow grid grid-cols-[auto_1fr_auto] w-full overflow-hidden min-h-0">
+      <div className="flex min-h-screen flex-col">
+        <Nav />
+        <main className="flex-1 grid grid-cols-[auto_1fr_auto] w-full">
           {/* <div className="col-span-1 overflow-y-auto min-h-0">
             <Nav />
           </div> */}
-          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
+          <div className="col-span-1 min-h-0 border-border-primary">
             <div className="frame w-[15px] md:w-[60px] h-full bg-black"></div>
           </div>
-          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary mx-4 rounded-lg">
+          <div className="col-span-1 min-h-0 border-border-primary mx-4 rounded-lg">
             <Body />
           </div>
-          <div className="col-span-1 overflow-y-auto min-h-0 border-border-primary ">
+          <div className="col-span-1 min-h-0 border-border-primary">
             <div className="frame w-[15px] md:w-[60px] h-full bg-black"></div>
           </div>
         </main>
