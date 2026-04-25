@@ -14,7 +14,7 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-      <div className=' flex flex-col py-4 lg:min-w-lg lg:min-h-[calc(100vh-200px)] '>
+      <div className=' flex flex-col py-4  lg:min-h-[calc(100vh-200px)] '>
       {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
 
       <div className="note/content flex flex-row items-stretch gap-4 absolute">
