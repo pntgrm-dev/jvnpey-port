@@ -19,8 +19,11 @@ const PageComponent = ({ title, children }) => {
 
       <div className="note/content flex flex-row items-stretch gap-4 absolute">
         <div
-          className="shrink-0 w-[64px] overflow-hidden bg-top bg-repeat-y bg-contain relative -translate-x-[70%]"
-          style={{ backgroundImage: "url('/assets/note/notering.png')" }}
+          className="shrink-0 w-[64px] overflow-hidden bg-top bg-repeat-y relative -translate-x-[70%]"
+          style={{
+            backgroundImage: "url('/assets/note/notering.png')",
+            backgroundSize: '64px auto',
+          }}
         />
         <div className='w-full mx-auto '>{children}</div>
       </div>
