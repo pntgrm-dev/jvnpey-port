@@ -29,9 +29,9 @@ const Nav = () => {
       <div className="menu text-left text-[12px]">
         <ul className="flex flex-row justify-between gap-2 ">
           <NavItem to="/CV">CV</NavItem>
-          <li className="mx-auto md:mx-0 border-none">
+          {/* <li className="mx-auto md:mx-0 border-none">
             <a href="mailto:example@example.com">Contact</a>
-          </li>
+          </li> */}
           {categories.map((cat) => (
             <NavItem key={cat} to={`/${cat}`}>
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
