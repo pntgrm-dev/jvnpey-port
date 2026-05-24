@@ -14,17 +14,26 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="relative flex min-h-screen flex-col py-4 pb-12 lg:min-w-xl lg:min-h-[calc(100vh-200px)]">
+    <div className="relative flex  flex-col py-4 pb-12 min-h-[calc(100dvh-2rem)]">
       {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
 
-      <div className="note/content relative -ml-[28px] flex min-h-[calc(100dvh-8rem)] flex-1 flex-row items-stretch gap-3 md:-ml-[20px] md:gap-4 lg:min-h-full">
+      <div
+        className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl"
+        style={{
+          backgroundImage: "var(--bg-url)",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div
-          className="relative shrink-0 self-stretch min-h-full w-[28px] overflow-visible bg-top bg-repeat-y bg-center bg-[length:28px_auto] md:w-[32px] md:bg-[length:44px_auto]"
+          className="relative shrink-0 self-stretch min-h-full -ml-[14px] w-[28px] overflow-visible bg-top bg-repeat-y bg-center bg-[length:28px_auto] md:-ml-[22px] md:w-[44px] md:bg-[length:44px_auto]"
           style={{
             backgroundImage: "url('/assets/note/notering.png')",
           }}
         />
-        <div className="w-full min-w-0 md:mx-auto">{children}</div>
+        <div className="w-full min-w-0 md:mx-auto pr-4">{children}</div>
       </div>
 
       {/* {id && (
