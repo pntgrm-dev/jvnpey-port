@@ -24,13 +24,27 @@ const CVPage = () => {
               <img src={profile.icon.url} alt="" className="logo w-20 h-20" />
             </div>
             <div className="">{profile.Name}</div>
-            <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: profile.Biography }} />
-            <div className="" dangerouslySetInnerHTML={{ __html: profile.Contact }} />
+            <div
+              className="leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: profile.Biography }}
+            />
+            <div
+              className=""
+              dangerouslySetInnerHTML={{ __html: profile.Contact }}
+            />
+            <div className="mail">
+              <a
+                href={`mailto:${profile.Mail || profile.Email || "example@email.com"}`}
+                className="hover:underline cursor-pointer py-1 inline-block"
+              >
+                {profile.Mail || profile.Email || "@email.com"}
+              </a>
+            </div>
           </div>
         )}
       </div>
     </PageComponent>
-  )
+  );
 }
 
 export default CVPage

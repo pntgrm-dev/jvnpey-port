@@ -45,7 +45,7 @@ const WorksPage = () => {
           filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
               <div key={year} className="year-section mb-8">
-                <div className="year-header text-[10px] mb-4 pb-2 border-b border-border-primary">
+                <div className="year-header text-[10px] mb-2">
                   {year}
                 </div>
                 <div className="year-works">
