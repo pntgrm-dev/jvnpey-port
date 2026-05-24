@@ -47,7 +47,7 @@ const Layout = () => {
       />
       <div className="flex min-h-screen flex-col">
         <Nav />
-        <main className="flex-1 grid grid-cols-[auto_1fr_auto] w-full">
+        <main className="relative z-10 bg-[#cacbcc] flex-1 grid grid-cols-[auto_1fr_auto] w-full">
           {/* <div className="col-span-1 overflow-y-auto min-h-0">
             <Nav />
           </div> */}
