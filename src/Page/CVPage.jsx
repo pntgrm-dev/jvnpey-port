@@ -20,7 +20,7 @@ const CVPage = () => {
         )}
         {!isLoading && !error && profile && (
           <div className="space-y-1 text-[10px] w-[300px]">
-            <div className="flex flex-row gap-2 flex-wrap justify-start">
+            <div className="flex flex-row gap-1 flex-wrap justify-start">
               {Array.isArray(profile.icons)
                 ? profile.icons.map((icon, i) => (
                     <img key={i} src={icon.url} alt="" className="logo w-20 h-20 object-cover" />
