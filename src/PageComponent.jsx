@@ -14,21 +14,17 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="relative flex flex-col py-8 pb-16 min-h-[calc(100dvh-2rem)]">
+    <div className="relative flex  flex-col py-6 pb-12 min-h-[calc(100dvh-2rem)]">
+      {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
+
       <div
-        className="note/content relative flex flex-1 flex-row items-stretch shadow-2xl bg-[#F9F9F9]/80 backdrop-blur-sm"
+        className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 "
         style={{
-          /* 方眼ノート（グリッド）パターンと背景画像の組み合わせ */
-          backgroundImage: `
-            linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
-            var(--bg-url)
-          `,
-          backgroundSize: "24px 24px, 24px 24px, cover",
-          backgroundPosition: "top left, top left, center",
-          backgroundRepeat: "repeat, repeat, no-repeat",
-          backgroundAttachment: "local, local, fixed",
-          backgroundBlendMode: "multiply, multiply, normal",
+          backgroundImage: "var(--bg-url)",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div
@@ -37,10 +33,7 @@ const PageComponent = ({ title, children }) => {
             backgroundImage: "url('/assets/note/notering.png')",
           }}
         />
-        {/* UKアートサイト風の大胆でたっぷりとられた余白（Padding） */}
-        <div className="w-full min-w-0 pt-12 pb-24 pl-8 pr-8 md:pl-16 md:pr-24 lg:pl-24 lg:pr-32 xl:pl-32 xl:pr-48">
-          {children}
-        </div>
+        <div className="w-full min-w-0 md:mx-auto pr-4">{children}</div>
       </div>
 
       {/* {id && (
