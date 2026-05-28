@@ -23,10 +23,10 @@ const CVPage = () => {
             <div className="flex flex-row gap-1 flex-wrap justify-start">
               {Array.isArray(profile.icons)
                 ? profile.icons.map((icon, i) => (
-                    <img key={i} src={icon.url} alt="" className="logo w-20 h-20 object-cover" />
+                    <img key={i} src={icon.url} alt="" className="logo w-auto h-20" />
                   ))
                 : profile.icons?.url && (
-                    <img src={profile.icons.url} alt="" className="logo w-20 h-20 object-cover" />
+                    <img src={profile.icons.url} alt="" className="logo w-auto h-20" />
                   )
               }
             </div>

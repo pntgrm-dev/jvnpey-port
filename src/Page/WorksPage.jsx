@@ -3,11 +3,12 @@ import useWorkStore from '../Store/getWorks'
 import List from '../list'
 import CardVideo from '../CardVideo'
 import PageComponent from '../PageComponent'
-import { useParams } from 'react-router'
 
-const WorksPage = () => {
+const NO_YEAR_CATEGORIES = ['music', 'publish', 'works'];
+
+const WorksPage = ({ category }) => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
-  const { category } = useParams();
+  const showYear = !NO_YEAR_CATEGORIES.includes(category?.toLowerCase());
 
   // ページを表示した際にもデータ取得を確認（Layoutで呼ばれているが念のため）
   useEffect(() => {
@@ -45,9 +46,11 @@ const WorksPage = () => {
           filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
               <div key={year} className="year-section mb-4 mt-4">
-                <div className="year-header text-[10px] mb-2">
-                  {year}
-                </div>
+                {showYear && (
+                  <div className="year-header text-[10px] mb-2">
+                    {year}
+                  </div>
+                )}
                 <div className="year-works">
                   {groupedByYear[year].map((work) => {
                     const workCats = Array.isArray(work.category) ? work.category : [work.category];
