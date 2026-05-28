@@ -71,7 +71,32 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* 現代美術ギャラリーによく使われるHelvetica系のクリーンなサンセリフ体 */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* 少しだけ文字間を詰めることで、洗練された印象に（トラッキング） */
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  /* フォントのレンダリングを滑らかにする */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* メニューや見出しのタイポグラフィ調整 */
+.menu, nav, .year-header {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: lowercase; /* メニューなどを小文字で統一するとUKギャラリーっぽさが出ます */
+}
+
+/* 作品タイトルなどの強調部分 */
+.title {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* 一部の要素にイタリック体を効果的に残す */
+.italic-text, .year-header {
   font-style: italic;
-  font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: 0.001em;
 }
