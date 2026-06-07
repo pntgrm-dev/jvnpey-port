@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import useWorkStore from '../Store/getWorks'
 import List from '../list'
 import CardVideo from '../CardVideo'
+import CardMusic from '../CardMusic'
 import PageComponent from '../PageComponent'
 
 const NO_YEAR_CATEGORIES = ['music', 'publish', 'works'];
@@ -58,11 +59,17 @@ const WorksPage = ({ category }) => {
                       (typeof cat === 'string' && cat.toLowerCase() === 'video') ||
                       (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'video')
                     );
-                    return isVideo ? (
-                      <CardVideo key={work.id} {...work} />
-                    ) : (
-                      <List key={work.id} {...work} />
-                    )
+                    const isMusic = workCats.some(cat => 
+                      (typeof cat === 'string' && cat.toLowerCase() === 'music') ||
+                      (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'music')
+                    );
+                    if (isVideo) {
+                      return <CardVideo key={work.id} {...work} />;
+                    } else if (isMusic) {
+                      return <CardMusic key={work.id} {...work} />;
+                    } else {
+                      return <List key={work.id} {...work} />;
+                    }
                   })}
                 </div>
               </div>
