@@ -7,7 +7,7 @@ const List = ({ id, category, title, date, NoPage }) => {
 
   return (
     <div className="card gap-4">
-      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-1">
+      <div className="text-area text-left col-span-1 md:col-span-2 flex gap-1 ml-2">
         {NoPage ? (
           <div className="title text-[12px]">{title}</div>
         ) : (

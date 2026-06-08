@@ -5,7 +5,7 @@ import CardVideo from '../CardVideo'
 import CardMusic from '../CardMusic'
 import PageComponent from '../PageComponent'
 
-const NO_YEAR_CATEGORIES = ['music', 'publish', 'works'];
+const NO_YEAR_CATEGORIES = ['music', 'publish', 'works','video'];
 
 const WorksPage = ({ category }) => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
