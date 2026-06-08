@@ -47,11 +47,11 @@ const WorksPage = ({ category }) => {
           filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
               <div key={year} className="year-section">
-                {/* {showYear && (
-                  <div className="year-header text-[10px] mb-2">
+                {showYear && (
+                  <div className="year-header text-[10px] my-2">
                     {year}
                   </div>
-                )} */}
+                )}
                 <div className="year-works">
                   {groupedByYear[year].map((work) => {
                     const workCats = Array.isArray(work.category) ? work.category : [work.category];
