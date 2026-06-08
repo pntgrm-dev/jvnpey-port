@@ -24,11 +24,11 @@ const Nav = () => {
             <div className="w-[12px] h-[12px] bg-white rounded-full"></div>
           </NavItem>
           <NavItem to="/CV">
-            <img src="/assets/icons/cv.png" alt="CV" className="h-[14px] w-auto object-contain" />
+            <img src="/assets/icons/cv.png" alt="CV" className="h-[16px] w-auto object-contain" />
           </NavItem>
           {CATEGORIES.map(({ label, path, icon }) => (
             <NavItem key={path} to={path}>
-              <img src={icon} alt={label} className="h-[14px] w-auto object-contain" />
+              <img src={icon} alt={label} className="h-[16px] w-auto object-contain" />
             </NavItem>
           ))}
         </ul>
