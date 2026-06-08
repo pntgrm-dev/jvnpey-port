@@ -12,7 +12,7 @@ const List = ({ id, category, title, date, NoPage }) => {
           <div className="title text-[12px]">{title}</div>
         ) : (
           <Link to={`/${catName}/${id}`} className="hover:underline">
-            <div className="title text-[12px] py-1">{title}</div>
+            <div className="title text-[12px] py-[3px]">{title}</div>
           </Link>
         )}
         {/* <div className="date text-[10px]">,{date?.slice(0, 4)}</div> */}
