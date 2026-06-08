@@ -34,7 +34,7 @@ const PageComponent = ({ title, children }) => {
           }}
         />
         <div className="w-full min-w-0 md:mx-auto pr-4">{children}</div>
-        <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
+        {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
 
       {/* <div className="backbutton mt-8 border-border-primary ">
