@@ -43,7 +43,7 @@ const CardMusic = (props) => {
   const catName = Array.isArray(category) ? category[0] : (typeof category === 'object' ? category?.name : category) || 'music';
 
   return (
-    <div className="card mb-8 w-full max-w-[720px] bg-[#cacbcc] border border-[#393542] overflow-hidden flex flex-col font-sans text-black shadow-sm">
+    <div className="card w-full max-w-[720px] bg-[#cacbcc] border-10 border-[#393542] overflow-hidden flex flex-col font-sans text-black shadow-sm">
       {/* メインレイアウト部分: ジャケットとテキストの横並び (モバイルでは縦並び) */}
       <div className="flex flex-row gap-6 items-stretch">
         
@@ -56,7 +56,7 @@ const CardMusic = (props) => {
               className="w-full h-full object-cover select-none"
             />
           ) : (
-            <div className="w-full h-full border border-dashed border-gray-600 flex items-center justify-center text-[10px] text-gray-500">
+            <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-500">
               No Image
             </div>
           )}
