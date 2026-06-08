@@ -20,17 +20,6 @@ const DetailPage = () => {
   // 画像URLの取得 (thumbnail -> img -> descriptionからの抽出)
   let imageUrl = work.thumbnail?.url || (Array.isArray(work.img) ? work.img[0]?.url : work.img?.url) || null;
 
-
-  // descriptionから画像（figureタグやimgタグ）を削除してテキスト部分を残す
-  let cleanDescription = work.description || "";
-  if (cleanDescription) {
-    // figureタグとその中身を削除
-    cleanDescription = cleanDescription.replace(/<figure[^>]*>([\s\S]*?)<\/figure>/gi, '');
-    // 単体のimgタグも削除
-    cleanDescription = cleanDescription.replace(/<img[^>]*>/gi, '');
-    cleanDescription = cleanDescription.trim();
-  }
-
   return (
     <PageComponent title={work.title}>
       <div className='max-w-4xl flex flex-col md:flex-row gap-6 items-start'>
@@ -48,7 +37,7 @@ const DetailPage = () => {
           <div className="date text-[10px] mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
           <div
             className="description leading-relaxed text-[12px] "
-            dangerouslySetInnerHTML={{ __html: cleanDescription }}
+            dangerouslySetInnerHTML={{ __html: work.description }}
           />
           {/* {work.link && (
             <div className="links mt-2 pt-2  border-black/10 text-[10px] text-right">
