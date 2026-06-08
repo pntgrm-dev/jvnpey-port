@@ -2,17 +2,10 @@ import React from "react";
 import { Link } from "react-router";
 
 const CardMusic = (props) => {
-  const { id, category, title, date, description, link } = props;
+  const { id, category, title, date, description, link, thumbnail } = props;
 
-  // 1. 画像URLの抽出 (description内の最初のimgタグからURLを抽出)
-  let imageUrl = null;
-  if (description) {
-    const imgRegex = /<img[^>]+src=["']([^"']+)["']/i;
-    const match = description.match(imgRegex);
-    if (match) {
-      imageUrl = match[1];
-    }
-  }
+  // 1. 画像URLの取得 (thumbnailから取得)
+  const imageUrl = thumbnail?.url || null;
 
   // 2. descriptionから画像（figureタグやimgタグ）を削除してテキスト部分を残す
   let cleanDescription = description || "";
@@ -33,19 +26,6 @@ const CardMusic = (props) => {
   const albumName = titleParts[1] || "";
   // リリース年
   const releaseYear = titleParts[2] || (date ? date.slice(0, 4) : "");
-
-  // レーベル名の推測 (説明文のテキストやリンクから推測、またはプレースホルダー)
-  let labelName = "INDEPENDENT";
-  const lowerDesc = cleanDescription.toLowerCase();
-  if (lowerDesc.includes("glocal records")) {
-    labelName = "GLOCAL RECORDS";
-  } else if (lowerDesc.includes("bandcamp")) {
-    labelName = "BANDCAMP";
-  } else if (link && link.toLowerCase().includes("bandcamp")) {
-    labelName = "BANDCAMP";
-  } else if (link && link.toLowerCase().includes("modernobscuremusic")) {
-    labelName = "MODERN OBSCURE MUSIC";
-  }
 
   // 4. 下部フッターのテキスト表示 (例: "LP 180G $27.99")
   let format = "LP";
@@ -85,11 +65,10 @@ const CardMusic = (props) => {
         {/* 右側: テキスト情報 */}
         <div className="flex-1 flex flex-col justify-start text-left min-w-0">
           {/* メインタイトル (アーティスト名) */}
-          <Link to={`/${catName}/${id}`} className="hover:underline text-black decoration-black/50">
             <h2 className="text-[18px] font-bold tracking-tight leading-tight mb-1 text-black">
               {artistName}
             </h2>
-          </Link>
+
 
           {/* サブタイトル (アルバム名/作品名) */}
           {albumName && (
@@ -97,11 +76,6 @@ const CardMusic = (props) => {
               {albumName}
             </h3>
           )}
-
-          {/* レーベル名 */}
-          <div className="text-[11px] text-[#555555] font-semibold tracking-wider uppercase mb-3">
-            {labelName}
-          </div>
 
           {/* 詳細説明文 */}
           {cleanDescription ? (

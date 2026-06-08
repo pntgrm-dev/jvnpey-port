@@ -21,7 +21,7 @@ const PageComponent = ({ title, children }) => {
         className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 "
         style={{
           backgroundImage: "var(--bg-url)",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "scroll",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",

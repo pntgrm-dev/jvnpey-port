@@ -63,9 +63,13 @@ const WorksPage = ({ category }) => {
                       (typeof cat === 'string' && cat.toLowerCase() === 'music') ||
                       (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'music')
                     );
+                    const isPublish = workCats.some(cat => 
+                      (typeof cat === 'string' && cat.toLowerCase() === 'publish') ||
+                      (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'publish')
+                    );
                     if (isVideo) {
                       return <CardVideo key={work.id} {...work} />;
-                    } else if (isMusic) {
+                    } else if (isMusic || isPublish) {
                       return <CardMusic key={work.id} {...work} />;
                     } else {
                       return <List key={work.id} {...work} />;
