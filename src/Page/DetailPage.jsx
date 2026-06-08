@@ -17,22 +17,23 @@ const DetailPage = () => {
   if (isLoading) return <PageComponent title="Loading..."><div className="p-4 text-center">Loading...</div></PageComponent>;
   if (!work) return <PageComponent title="Not Found"><div className="p-4 text-center">Work not found.</div></PageComponent>;
 
-  // 画像URLの取得 (thumbnail -> img -> descriptionからの抽出)
-  let imageUrl = work.thumbnail?.url || (Array.isArray(work.img) ? work.img[0]?.url : work.img?.url) || null;
+  const imageUrl = Array.isArray(work.img) ? work.img[0]?.url : work.img?.url || "/assets/image.jpg";
 
   return (
     <PageComponent title={work.title}>
-      <div className='max-w-4xl flex flex-col md:flex-row gap-6 items-start'>
-        {imageUrl && imageUrl !== "/assets/image.jpg" && (
-          <div className="cover w-full md:w-[300px] flex-shrink-0 my-2">
+      <div className='max-w-4xl'>
+        <div className="cover max-w-lg my-2">
+          {imageUrl && imageUrl !== "/assets/image.jpg" ? (
             <img
               src={imageUrl}
               alt={work.title}
               className="w-full h-auto"
             />
-          </div>
-        )}
-        <div className="text-area flex-1 min-w-0">
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <div className="text-area ">
           <div className="title text-md font-bold ">{work.title}</div>
           <div className="date text-[10px] mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
           <div

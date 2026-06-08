@@ -31,7 +31,7 @@ const CardVideo = (props) => {
   const handleToggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="card mb-8 w-full max-w-[720px] group border border-border-secondary">
+    <div className="card  w-full max-w-[720px] group border border-border-secondary">
       {youtubeId ? (
         <div className="video-embed aspect-video overflow-hidden border bg-[#cacbcc]">
           <iframe

@@ -46,12 +46,12 @@ const WorksPage = ({ category }) => {
         {!isLoading && !error && (
           filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
-              <div key={year} className="year-section mb-4 mt-4">
-                {showYear && (
+              <div key={year} className="year-section">
+                {/* {showYear && (
                   <div className="year-header text-[10px] mb-2">
                     {year}
                   </div>
-                )}
+                )} */}
                 <div className="year-works">
                   {groupedByYear[year].map((work) => {
                     const workCats = Array.isArray(work.category) ? work.category : [work.category];

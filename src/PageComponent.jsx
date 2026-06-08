@@ -14,7 +14,7 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="relative flex  flex-col py-6 pb-12 min-h-[calc(100dvh-2rem)]">
+    <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)]">
       {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
 
       <div
@@ -34,7 +34,12 @@ const PageComponent = ({ title, children }) => {
           }}
         />
         <div className="w-full min-w-0 md:mx-auto pr-4">{children}</div>
+        {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
+
+      {/* <div className="backbutton mt-8 border-border-primary ">
+        <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
+      </div> */}
 
       {/* {id && (
         <div className="backButton">
