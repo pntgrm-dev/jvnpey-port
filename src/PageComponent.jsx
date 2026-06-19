@@ -15,10 +15,10 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="relative flex  flex-col pb-12 min-h-[calc(100dvh-2rem)]">
+    <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)] my-2">
       {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
       <div
-        className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 "
+        className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 rounded-lg"
         style={{
           backgroundImage: "var(--bg-url)",
           backgroundAttachment: "scroll",
@@ -40,18 +40,18 @@ const PageComponent = ({ title, children }) => {
         </div>
 
         <div className="flex-1 min-w-0 pr-4 relative">
-          <div className="absolute top-0 right-4 ">
+          <div className="absolute top-0 right-4 pointer-events-none">
             <img className="w-[100px] md:w-[120px]" src="/assets/gif/Bird.gif" alt="" />
           </div>
-          <div className="absolute bottom-0 right-10 ">
+          <div className="absolute bottom-0 right-10 pointer-events-none">
             <img className="w-[120px] md:w-[120px]" src="/assets/gif/Dog.gif" alt="" />
           </div>
           {!id && (
-            <div className="absolute top-[200px] right-[20%] ">
-              <img className="w-[300px] md:w-[400px]" src="/assets/gif/Fly.gif" alt="" />
+            <div className="absolute z-10 left-[30px] md:left-[100px] top-[-10px] md:top-[-110px] pointer-events-none">
+              <img className="w-[500px] md:w-[600px] mb-10" src="/assets/gif/Fly.gif" alt="" />
             </div>
           )}
-          <div className="w-full max-w-[550px] px-4">
+          <div className="w-full max-w-[550px] px-4 z-">
             {children}
           </div>
         </div>

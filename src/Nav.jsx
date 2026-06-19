@@ -37,10 +37,10 @@ const Nav = () => {
   };
 
   const NavItem = ({ to, children }) => (
-    <li className="w-full border-none">
+    <li className="w-full border-none font-writing-minimalist">
       <Link
         to={to}
-        className="block w-full hover:underline font-handwriting text-[10px] text-[#393542] leading-none py-1 text-italic"
+        className="block w-full hover:underline text-[10px] text-[#393542] leading-none py-1 text-italic"
       >
         {children}
       </Link>
@@ -48,7 +48,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className=" px-1 w-full text-black">
+    <nav className=" px-1 w-full text-black font-[WrittingMimnimalist}">
       <div className="menu text-left w-full">
         <ul className="flex flex-col items-start w-full">
           <NavItem to="/CV">cv</NavItem>

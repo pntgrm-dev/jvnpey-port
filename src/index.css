@@ -1,11 +1,17 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@font-face {
+  font-family: 'Writing Minimalist';
+  src: url('/assets/font/Writing Minimalist.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @theme {
   --font-size-xsm: 0.625rem; /* 10px */
   --spacing-1080: 1080px;
-  --font-family-handwriting: "Gloria Hallelujah", cursive;
+  --font-family-handwriting: "Writing Minimalist", "Gloria Hallelujah", cursive;
   --color-border-primary: #393542;
   --color-border-secondary: #393542;
   --border-width-default: 1px;
@@ -66,7 +72,8 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: #ffffff;
+  background-image: url('/bg.png');
   color: #000000;
   margin: 0;
   padding: 0;
