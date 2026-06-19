@@ -47,11 +47,11 @@ const PageComponent = ({ title, children }) => {
             <img className="w-[120px] md:w-[120px]" src="/assets/gif/Dog.gif" alt="" />
           </div>
           {!id && (
-            <div className="absolute z-10 left-[30px] md:left-[100px] top-[-10px] md:top-[-110px] pointer-events-none">
-              <img className="w-[500px] md:w-[600px] mb-10" src="/assets/gif/Fly.gif" alt="" />
+            <div className="absolute z-10 left-[0px] md:left-[0px] top-[-10px] md:top-[-110px] pointer-events-none">
+              <img className="w-[600px] md:w-[600px] mb-10" src="/assets/gif/Fly.gif" alt="" />
             </div>
           )}
-          <div className="w-full max-w-[550px] px-4 z-">
+          <div className="w-full max-w-[550px] px-2 z-">
             {children}
           </div>
         </div>
