@@ -45,7 +45,7 @@ const CardMusic = (props) => {
   return (
     <div className="card w-full bg-[#cacbcc] m-auto border-x-8 border-y-8 border-[#393542] overflow-hidden flex flex-col font-sans text-black shadow-sm">
       {/* メインレイアウト部分: ジャケットとテキストの横並び (モバイルでは縦並び) */}
-      <div className="flex flex-row gap-6 items-stretch">
+      <div className="flex flex-col md:flex-row gap-6 items-stretch">
         
         {/* 左側: ジャケット画像 (黒枠の中に配置) */}
         <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px] flex-shrink-0 bg-[#0c0c0c] flex items-center justify-center mx-auto md:mx-0 shadow-md">

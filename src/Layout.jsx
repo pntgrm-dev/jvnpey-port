@@ -44,15 +44,11 @@ const Layout = () => {
       }}
     >
       <div className="flex  flex-col">
-        <Nav />
         <main className="relative z-10 flex-1 grid grid-cols-[auto_1fr_auto] w-full">
-          {/* <div className="col-span-1 overflow-y-auto min-h-0">
-            <Nav />
-          </div> */}
           <div className="col-span-1 min-h-0 border-border-primary">
             <div className="frame w-[15px] md:w-[60px] h-full bg-black"></div>
           </div>
-          <div className="col-span-1 min-h-0 border-border-primary mx-4 rounded-lg">
+          <div className="col-span-1 min-h-0 border-border-primary mx-4 rounded-lg my-8">
             <Body />
           </div>
           <div className="col-span-1 min-h-0 border-border-primary">

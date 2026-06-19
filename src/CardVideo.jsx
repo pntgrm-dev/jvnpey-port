@@ -50,7 +50,7 @@ const CardVideo = (props) => {
         </div>
       )}
 
-      <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px_20px] bg-[#6b7557] border border-border-secondary">
+      <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px] bg-[#6b7557] border border-border-secondary">
         <Link to={`/${catName}/${id}`} className="hover:underline">
           <div className="title text-[12px] font-medium ">
             {title}
@@ -59,16 +59,8 @@ const CardVideo = (props) => {
         <div className="date text-[12px] opacity-30 mx-auto ">
           {date?.slice(0, 4)}
         </div>
-        <div className="toggle mx-auto">
-          <i class="fa-solid fa-angle-down text-[12px]" onClick={handleToggle}></i>
-        </div>
       </div>
-      <div className="textArea py-auto"></div>
-        {isOpen && (
-          <div className="text-[12px] p-2 border border-border-secondary" dangerouslySetInnerHTML={{ __html: description }}>
-          </div>
-        )}
-      </div>
+    </div>
   );
 };
 

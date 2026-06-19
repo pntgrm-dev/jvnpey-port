@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router";
+import Nav from "./Nav";
 
 const PageComponent = ({ title, children }) => {
   const { id, category } = useParams();
@@ -16,7 +17,6 @@ const PageComponent = ({ title, children }) => {
   return (
     <div className="relative flex  flex-col pb-12 min-h-[calc(100dvh-2rem)]">
       {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
-
       <div
         className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 "
         style={{
@@ -33,7 +33,28 @@ const PageComponent = ({ title, children }) => {
             backgroundImage: "url('/assets/note/notering.png')",
           }}
         />
-        <div className="w-full min-w-0 md:mx-auto pr-4">{children}</div>
+
+        <div className="shrink-0 w-[50px] z-10 pl-2">
+          <Nav />
+          <img className="w-full mt-[5px]" src="/assets/gif/Face1.gif" alt="" />
+        </div>
+
+        <div className="flex-1 min-w-0 pr-4 relative">
+          <div className="absolute top-0 right-4 ">
+            <img className="w-[100px] md:w-[120px]" src="/assets/gif/Bird.gif" alt="" />
+          </div>
+          <div className="absolute bottom-0 right-10 ">
+            <img className="w-[120px] md:w-[120px]" src="/assets/gif/Dog.gif" alt="" />
+          </div>
+          {!id && (
+            <div className="absolute top-[200px] right-[20%] ">
+              <img className="w-[300px] md:w-[600px]" src="/assets/gif/Fly.gif" alt="" />
+            </div>
+          )}
+          <div className="w-full max-w-[420px] px-4">
+            {children}
+          </div>
+        </div>
         {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
 
