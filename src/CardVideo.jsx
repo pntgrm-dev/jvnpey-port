@@ -70,10 +70,10 @@ const CardVideo = (props) => {
       )}
 
       <div className="text-area px-2 py-1 text-left grid gap-4 items-baseline grid-cols-[auto_40px] bg-[#6b7557] border border-border-secondary">
-        <div className="title text-[10px] font-medium text-white">
+        <div className="title text-[10px] font-medium text-black">
           {title}
         </div>
-        <div className="date text-[10px] opacity-50 mx-auto text-white">
+        <div className="date text-[10px] opacity-50 mx-auto text-black">
           {date?.slice(0, 4)}
         </div>
       </div>
