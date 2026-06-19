@@ -48,10 +48,10 @@ const PageComponent = ({ title, children }) => {
           </div>
           {!id && (
             <div className="absolute top-[200px] right-[20%] ">
-              <img className="w-[300px] md:w-[600px]" src="/assets/gif/Fly.gif" alt="" />
+              <img className="w-[300px] md:w-[400px]" src="/assets/gif/Fly.gif" alt="" />
             </div>
           )}
-          <div className="w-full max-w-[420px] px-4">
+          <div className="w-full max-w-[550px] px-4">
             {children}
           </div>
         </div>

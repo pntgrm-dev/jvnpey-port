@@ -52,11 +52,11 @@ const CardVideo = (props) => {
 
       <div className="text-area px-2 py-1 text-left grid  gap-4 items-baseline grid-cols-[auto_40px] bg-[#6b7557] border border-border-secondary">
         <Link to={`/${catName}/${id}`} className="hover:underline">
-          <div className="title text-[12px] font-medium ">
+          <div className="title text-[10px] font-medium ">
             {title}
           </div>
         </Link>
-        <div className="date text-[12px] opacity-30 mx-auto ">
+        <div className="date text-[10px] opacity-30 mx-auto ">
           {date?.slice(0, 4)}
         </div>
       </div>
