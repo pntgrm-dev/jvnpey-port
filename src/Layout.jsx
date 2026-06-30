@@ -37,24 +37,20 @@ const Layout = () => {
   console.log('Profile in Layout:', profile); // デバッグ用ログ
 
   return (
-    <div 
-      className="relative flex flex-col"
-      style={{
-        '--bg-url': backgroundUrl ? `url(${backgroundUrl})` : "none",
-      }}
-    >
-      <div className="flex  flex-col">
-        <main className="relative z-10 flex-1 grid grid-cols-[1fr] w-full">
+    <div className="flex">
+      <div className="w-[50px] shrink-0 sticky top-4 h-fit ml-4">
+        <Nav />
+        <img
+          className="w-full mt-[5px]"
+          src="/assets/gif/Face1.gif"
+          alt=""
+        />
+      </div>
 
-          <div className="col-span-1 min-h-0 border-border-primary mx-4 md:mx-12 rounded-lg">
-            <Body />
-          </div>
-   
-        </main>
-        <Footer />
+      <div className="flex-1 ml-8">
+        <Body />
       </div>
     </div>
-  );
-}
+  )}
 
 export default Layout

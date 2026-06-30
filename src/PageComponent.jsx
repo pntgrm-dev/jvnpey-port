@@ -34,10 +34,10 @@ const PageComponent = ({ title, children }) => {
           }}
         />
 
-        <div className="shrink-0 w-[50px] z-30 pl-2 sticky top-4 h-fit self-start">
+        {/* <div className="shrink-0 w-[50px] z-30 pl-2 sticky top-4 h-fit self-start">
           <Nav />
           <img className="w-full mt-[5px]" src="/assets/gif/Face1.gif" alt="" />
-        </div>
+        </div> */}
 
         <div className="flex-1 min-w-0 pr-4 relative overflow-x-hidden">
           <div className="absolute top-0 right-4 pointer-events-none">

@@ -44,16 +44,6 @@
   --layout-section-border: var(--border-width-default) solid var(--color-border-primary);
 }
 
-:root {
-  --font-size-xxs: 1rem; /* 10px */
-  --font-size-xs: 1rem; /* 11px */
-  --font-size-sm: 1rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1rem; /* 18px */
-  --font-size-xl: 1rem; /* 20px */
-  --font-size-2xl: 1rem; /* 24px */
-}
-
 @layer utilities {
   .border-primary {
     @apply border border-border-primary;

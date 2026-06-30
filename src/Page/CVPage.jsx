@@ -31,10 +31,10 @@ const CVPage = () => {
               }
             </div>
             <div className="">{profile.Name}</div>
-            <div
-              className="leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: profile.Biography }}
-            />
+              <div
+                className="leading-relaxed [&_a]:no-underline [&_a:hover]:underline"
+                dangerouslySetInnerHTML={{ __html: profile.Biography }}
+              />
             <div
               className=""
               dangerouslySetInnerHTML={{ __html: profile.Contact }}
