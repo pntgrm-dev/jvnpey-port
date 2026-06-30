@@ -53,13 +53,13 @@ const CardVideo = (props) => {
                 className="w-full h-full object-cover select-none"
               />
               {/* カスタム再生ボタンオーバーレイ */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 flex items-center justify-center transition-colors">
+              {/* <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 flex items-center justify-center transition-colors">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-black fill-current ml-1" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
