@@ -46,7 +46,7 @@ const Layout = () => {
       <div className="flex  flex-col">
         <main className="relative z-10 flex-1 grid grid-cols-[1fr] w-full">
 
-          <div className="col-span-1 min-h-0 border-border-primary mx-12 rounded-lg">
+          <div className="col-span-1 min-h-0 border-border-primary mx-4 md:mx-12 rounded-lg">
             <Body />
           </div>
    
