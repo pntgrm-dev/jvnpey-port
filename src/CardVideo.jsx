@@ -64,16 +64,16 @@ const CardVideo = (props) => {
           )}
         </div>
       ) : (
-        <div className="no-video aspect-video mb-4 bg-gray-100 flex items-center justify-center text-[10px] opacity-20 p-4">
+        <div className="no-video aspect-video mb-4 bg-gray-100 flex items-center justify-center text-xxs opacity-20 p-4">
           Video link not found
         </div>
       )}
 
       <div className="text-area px-2 py-1 text-left grid gap-4 items-baseline grid-cols-[auto_40px] bg-[#6b7557] border border-border-secondary">
-        <div className="title text-[10px] font-medium text-black">
+        <div className="title text-xxs font-medium text-black">
           {title}
         </div>
-        <div className="date text-[10px] opacity-50 mx-auto text-black">
+        <div className="date text-xxs opacity-50 mx-auto text-black">
           {date?.slice(0, 4)}
         </div>
       </div>

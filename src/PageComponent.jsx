@@ -16,7 +16,7 @@ const PageComponent = ({ title, children }) => {
 
   return (
     <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)] my-2">
-      {/* <div className='text-left text-[10px] my-2 border border-border-primary'>{title}</div> */}
+      {/* <div className='text-left text-xxs my-2 border border-border-primary'>{title}</div> */}
       <div
         className="note/content relative flex flex-1 flex-row items-stretch gap-3 md:gap-4 shadow-xl py-4 rounded-lg"
         style={{
@@ -65,16 +65,16 @@ const PageComponent = ({ title, children }) => {
           )}
           <div className="w-full max-w-full md:max-w-[550px] px-2 page-children overflow-x-hidden">{children}</div>
         </div>
-        {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
+        {/* <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
 
       {/* <div className="backbutton mt-8 border-border-primary ">
-        <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
+        <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
       </div> */}
 
       {/* {id && (
         <div className="backButton">
-          <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
+          <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
         </div>
       )} */}
     </div>

@@ -44,6 +44,16 @@
   --layout-section-border: var(--border-width-default) solid var(--color-border-primary);
 }
 
+:root {
+  --font-size-xxs: 0.625rem; /* 10px */
+  --font-size-xs: 0.6875rem; /* 11px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+}
+
 @layer utilities {
   .border-primary {
     @apply border border-border-primary;
@@ -73,6 +83,34 @@
 
   .section-border-left {
     border-left: var(--layout-section-border);
+  }
+
+  .text-xxs {
+    font-size: var(--font-size-xxs) !important;
+  }
+
+  .text-xs {
+    font-size: var(--font-size-xs) !important;
+  }
+
+  .text-sm {
+    font-size: var(--font-size-sm) !important;
+  }
+
+  .text-base {
+    font-size: var(--font-size-base) !important;
+  }
+
+  .text-lg {
+    font-size: var(--font-size-lg) !important;
+  }
+
+  .text-xl {
+    font-size: var(--font-size-xl) !important;
+  }
+
+  .text-2xl {
+    font-size: var(--font-size-2xl) !important;
   }
 
   @media (min-width: 768px) {
@@ -140,6 +178,7 @@ body {
   background-color: #ffffff;
   background-image: url('/bg.png');
   color: #000000;
+  font-size: var(--font-size-base);
   margin: 0;
   padding: 0;
   box-sizing: border-box;

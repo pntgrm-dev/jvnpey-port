@@ -34,14 +34,14 @@ const DetailPage = () => {
           )}
         </div>
         <div className="text-area ">
-          <div className="title text-[10px] font-bold ">{work.title}</div>
-          <div className="date text-[10px] mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
+          <div className="title text-xxs font-bold ">{work.title}</div>
+          <div className="date text-xxs mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
           <div
-            className="description leading-relaxed text-[10px] w-max-[200px]"
+            className="description leading-relaxed text-xxs w-max-[200px]"
             dangerouslySetInnerHTML={{ __html: work.description }}
           />
           {/* {work.link && (
-            <div className="links mt-2 pt-2  border-black/10 text-[10px] text-right">
+            <div className="links mt-2 pt-2  border-black/10 text-xxs text-right">
               <a href={work.link} target="_blank" rel="noopener noreferrer" className="hover:underline opacity-60">
                 Link: {work.link}
               </a>

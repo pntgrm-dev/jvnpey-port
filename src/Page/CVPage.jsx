@@ -19,7 +19,7 @@ const CVPage = () => {
           <div className="text-red-500 p-4 text-center">Error: {error}</div>
         )}
         {!isLoading && !error && profile && (
-          <div className="space-y-1 text-[10px] w-auto">
+          <div className="space-y-1 text-xxs w-auto">
             <div className="flex flex-row gap-1 flex-wrap justify-start">
               {Array.isArray(profile.icons)
                 ? profile.icons.map((icon, i) => (

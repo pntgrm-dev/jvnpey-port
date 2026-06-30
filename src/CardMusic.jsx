@@ -56,7 +56,7 @@ const CardMusic = (props) => {
               className="w-full h-full object-cover select-none"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-500">
+            <div className="w-full h-full flex items-center justify-center text-xxs text-gray-500">
               No Image
             </div>
           )}
@@ -65,14 +65,14 @@ const CardMusic = (props) => {
         {/* 右側: テキスト情報 */}
         <div className="flex-1 flex flex-col justify-start text-left min-w-0 my-2">
           {/* メインタイトル (アーティスト名) */}
-            <h2 className="text-[18px] font-bold tracking-tight leading-tight mb-1 text-black">
+            <h2 className="text-lg font-bold tracking-tight leading-tight mb-1 text-black">
               {artistName}
             </h2>
 
 
           {/* サブタイトル (アルバム名/作品名) */}
           {albumName && (
-            <h3 className="text-[14px] text-[#333333] font-medium leading-snug mb-1">
+            <h3 className="text-sm text-[#333333] font-medium leading-snug mb-1">
               {albumName}
             </h3>
           )}
@@ -80,11 +80,11 @@ const CardMusic = (props) => {
           {/* 詳細説明文 */}
           {cleanDescription ? (
             <div 
-              className="text-[11px] leading-relaxed text-[#333333] overflow-y-auto max-h-[110px] pr-2 custom-scrollbar"
+              className="text-xs leading-relaxed text-[#333333] overflow-y-auto max-h-[110px] pr-2 custom-scrollbar"
               dangerouslySetInnerHTML={{ __html: cleanDescription }}
             />
           ) : (
-            <div className="text-[11px] text-gray-500 italic">
+            <div className="text-xs text-gray-500 italic">
               No description available.
             </div>
           )}
@@ -92,10 +92,10 @@ const CardMusic = (props) => {
       </div>
 
       {/* 下部: オリーブグリーンのフッター帯 */}
-      <div className="w-full h-[28px] bg-[#6b7557] text-[#fef08a] px-4 flex justify-between items-center text-[10px] font-semibold tracking-widest border-t border-[#393542]">
+      <div className="w-full h-[28px] bg-[#6b7557] text-[#fef08a] px-4 flex justify-between items-center text-xxs font-semibold tracking-widest border-t border-[#393542]">
         {/* 左側: ボリュームアイコン */}
         <div className="flex items-center">
-          {/* <i className="fa-solid fa-volume-high text-[11px]"></i> */}
+          {/* <i className="fa-solid fa-volume-high text-xs"></i> */}
         </div>
         {/* 右側: フォーマット / 価格 / 年情報 */}
         <div className="uppercase">
