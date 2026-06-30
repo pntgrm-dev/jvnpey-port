@@ -42,7 +42,7 @@ const CVPage = () => {
             <div className="mail">
               <a
                 href={`mailto:${profile.Mail || profile.Email || "jvnpey@gmail.com"}`}
-                className="hover:underline cursor-pointer py-1 inline-block text-[#6E00E1]"
+                className="hover:underline cursor-pointer py-1 inline-block text-[#0000FF]"
               >
                 jvnpey@gmail.com
               </a>

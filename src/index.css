@@ -90,20 +90,13 @@ body {
   letter-spacing: 0.001em;
 }
 
-a,
-.description a,
-.page-children a,
-.page-children a:link,
-.page-children a:visited,
-.page-children a:hover,
-.page-children a:active {
-  color: #1a0f1b !important;
-  text-decoration-color: inherit;
-}
-
-/* Force links inside .page-children description to site color, overriding inline styles */
 .page-children .description a,
+.page-children .description a:link,
+.page-children .description a:visited,
+.page-children .description a:hover,
+.page-children .description a:active,
 .page-children .description a * {
-  color: #1a0f1b !important;
+  color: #0000FF !important;
   text-decoration-color: inherit !important;
 }
+
