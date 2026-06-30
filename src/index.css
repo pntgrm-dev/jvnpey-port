@@ -71,6 +71,13 @@
   margin: 1rem;
 }
 
+.description img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
 body {
   background-color: #ffffff;
   background-image: url('/bg.png');

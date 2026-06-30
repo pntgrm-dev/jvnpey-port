@@ -28,32 +28,42 @@ const PageComponent = ({ title, children }) => {
         }}
       >
         <div
-          className="relative shrink-0 self-stretch min-h-full -ml-[14px] w-[28px] overflow-visible bg-top bg-repeat-y bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto] mt-[8px]"
+          className="relative shrink-0 self-stretch min-h-full -ml-[8px] w-[28px]  overflow-visible bg-top bg-repeat-y bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto] my-[-16px]"
           style={{
             backgroundImage: "url('/assets/note/notering.png')",
           }}
         />
 
-        <div className="shrink-0 w-[50px] z-10 pl-2">
+        <div className="shrink-0 w-[50px] z-30 pl-2 sticky top-4 h-fit self-start">
           <Nav />
           <img className="w-full mt-[5px]" src="/assets/gif/Face1.gif" alt="" />
         </div>
 
         <div className="flex-1 min-w-0 pr-4 relative">
           <div className="absolute top-0 right-4 pointer-events-none">
-            <img className="w-[100px] md:w-[120px]" src="/assets/gif/Bird.gif" alt="" />
+            <img
+              className="w-[100px] md:w-[120px]"
+              src="/assets/gif/Bird.gif"
+              alt=""
+            />
           </div>
           <div className="absolute bottom-0 right-10 pointer-events-none">
-            <img className="w-[120px] md:w-[120px]" src="/assets/gif/Dog.gif" alt="" />
+            <img
+              className="w-[120px] md:w-[120px]"
+              src="/assets/gif/Dog.gif"
+              alt=""
+            />
           </div>
           {!id && (
             <div className="absolute z-10 left-[0px] md:left-[0px] top-[-10px] md:top-[-110px] pointer-events-none">
-              <img className="w-[600px] md:w-[600px] mb-10" src="/assets/gif/Fly.gif" alt="" />
+              <img
+                className="w-[600px] md:w-[600px] mb-10"
+                src="/assets/gif/Fly.gif"
+                alt=""
+              />
             </div>
           )}
-          <div className="w-full max-w-[550px] px-2 z-">
-            {children}
-          </div>
+          <div className="w-full max-w-[550px] px-2">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
