@@ -40,7 +40,7 @@ const Nav = () => {
     <li className="w-full border-none font-writing-minimalist">
       <Link
         to={to}
-        className="block w-full hover:underline text-[10px] text-[#393542] leading-none py-1 text-italic"
+        className="block w-full hover:underline text-[10px] text-[#1a0f1b] leading-none py-1 text-italic"
       >
         {children}
       </Link>

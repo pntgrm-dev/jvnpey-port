@@ -63,7 +63,7 @@ const PageComponent = ({ title, children }) => {
               />
             </div>
           )}
-          <div className="w-full max-w-[550px] px-2">{children}</div>
+          <div className="w-full max-w-[550px] px-2 page-children">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-[10px] opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>

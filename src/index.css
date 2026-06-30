@@ -89,3 +89,21 @@ body {
   font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   letter-spacing: 0.001em;
 }
+
+a,
+.description a,
+.page-children a,
+.page-children a:link,
+.page-children a:visited,
+.page-children a:hover,
+.page-children a:active {
+  color: #1a0f1b !important;
+  text-decoration-color: inherit;
+}
+
+/* Force links inside .page-children description to site color, overriding inline styles */
+.page-children .description a,
+.page-children .description a * {
+  color: #1a0f1b !important;
+  text-decoration-color: inherit !important;
+}
