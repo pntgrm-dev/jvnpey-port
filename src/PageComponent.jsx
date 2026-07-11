@@ -18,7 +18,7 @@ const PageComponent = ({ title, children }) => {
     <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)] my-2">
       {/* <div className='text-left text-xxs my-2 border border-border-primary'>{title}</div> */}
       <div
-        className="note/content relative flex flex-1 flex-row items-stretch gap-4 md:gap-4  shadow-[0px_0px_10px_rgba(0,0,0,0.5)] mr-4 py-4"
+        className="note/content relative flex flex-1 flex-row items-stretch gap-2  shadow-[0px_0px_10px_rgba(0,0,0,0.5)] mr-4 py-4"
         style={{
           backgroundImage: "var(--bg-url)",
           backgroundAttachment: "scroll",
