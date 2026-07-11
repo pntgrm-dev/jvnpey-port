@@ -1,10 +1,12 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router";
+import { useLocation, useParams, useNavigate } from "react-router";
 import Nav from "./Nav";
 
 const PageComponent = ({ title, children }) => {
   const { id, category } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+  const isSelectedPage = location.pathname === "/selected" || category === "selected";
 
   const handleBack = () => {
     if (category) {
@@ -57,7 +59,7 @@ const PageComponent = ({ title, children }) => {
               alt=""
             />
           </div>
-          {!id && (
+          {!id && !isSelectedPage && (
             <div className="absolute z-10 left-[60px] md:left-[180px] top-[0px] md:top-[30px] pointer-events-none fixed">
               <img
                 className="w-[300px] md:w-[500px] mb-10"

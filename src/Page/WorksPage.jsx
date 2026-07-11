@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router'
 import useWorkStore from '../Store/getWorks'
 import List from '../list'
 import CardVideo from '../CardVideo'
@@ -79,13 +80,16 @@ const WorksPage = ({ category }) => {
                         <div key={work.id} className="space-y-2">
                           <List key={work.id} {...work} />
                           {shouldShowThumbnail && imageUrl && (
-                            <a href={work.url} target="_blank" rel="noopener noreferrer">
+                            <Link
+                              to={`/${category}/${work.id}`}
+                              className="block"
+                            >
                               <img
                                 src={imageUrl}
                                 alt={work.title || 'Work thumbnail'}
-                                className="w-75 md:w-125 mb-4 mx-auto object-contain"
+                                className="w-75 md:w-125 mb-4 mx-auto object-contain cursor-pointer"
                               />
-                            </a>
+                            </Link>
                           )}
                         </div>
                       );
