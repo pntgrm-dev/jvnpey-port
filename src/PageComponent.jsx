@@ -66,7 +66,7 @@ const PageComponent = ({ title, children }) => {
               />
             </div>
           )}
-          <div className="w-full max-w-full md:max-w-[550px] page-children overflow-x-hidden">{children}</div>
+          <div className="w-full max-w-full md:max-w-[550px] page-children overflow-x-hidden md:ml-2">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
