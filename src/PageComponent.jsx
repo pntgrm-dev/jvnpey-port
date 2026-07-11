@@ -52,7 +52,7 @@ const PageComponent = ({ title, children }) => {
           }
           <div className="absolute bottom-0 right-10 pointer-events-none">
             <img
-              className="w-[120px] md:w-[120px]"
+              className="w-[80px] md:w-[120px]"
               src="/assets/gif/Dog.gif"
               alt=""
             />
