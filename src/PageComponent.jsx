@@ -40,7 +40,7 @@ const PageComponent = ({ title, children }) => {
           <img className="w-full mt-[5px]" src="/assets/gif/Face1.gif" alt="" />
         </div> */}
 
-        <div className="flex-1 min-w-0 pr-4 relative overflow-x-hidden">
+        <div className="flex-1 min-w-0 pr-4 relative">
           {id &&
             <div className="absolute top-0 right-4 pointer-events-none">
             <img
@@ -50,7 +50,7 @@ const PageComponent = ({ title, children }) => {
             />
           </div>
           }
-          <div className="absolute bottom-0 right-10 pointer-events-none">
+          <div className="absolute md:bottom-[-25px] md:right-[-16px] bottom-[-22px] right-[-10px] pointer-events-none">
             <img
               className="w-[80px] md:w-[120px]"
               src="/assets/gif/Dog.gif"

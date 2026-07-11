@@ -10,6 +10,7 @@ import WorksListPage from "./Page/WorksListPage";
 import ArchivePage from "./Page/ArchivePage";
 import MusicPage from "./Page/MusicPage";
 import VideoPage from "./Page/VideoPage";
+import SelectedPage from "./Page/SelectedPage";
 
 const Body = () => {
   return (
@@ -23,6 +24,7 @@ const Body = () => {
         <Route path="/archive" element={<ArchivePage />} />
         <Route path="/music" element={<MusicPage />} />
         <Route path="/video" element={<VideoPage />} />
+        <Route path="/selected" element={<SelectedPage />} />
         <Route path="/:category/:id" element={<DetailPage />} />
       </Routes>
     </div>
