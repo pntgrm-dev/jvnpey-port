@@ -48,7 +48,7 @@ const WorksPage = ({ category }) => {
             sortedYears.map((year) => (
               <div key={year} className="year-section">
                 {showYear && (
-                  <div className="year-header text-xxs text-gray-500 my-[2px]">
+                  <div className="year-header text-xxs text-gray-500 my-0.5">
                     {year}
                   </div>
                 )}
@@ -67,12 +67,28 @@ const WorksPage = ({ category }) => {
                       (typeof cat === 'string' && cat.toLowerCase() === 'publish') ||
                       (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'publish')
                     );
+                    const imageUrl = work.thumbnail?.url || work.thumbnail || null;
+                    const shouldShowThumbnail = category?.toLowerCase() === 'selected';
+
                     if (isVideo) {
                       return <CardVideo key={work.id} {...work} />;
                     } else if (isMusic || isPublish) {
                       return <CardMusic key={work.id} {...work} />;
                     } else {
-                      return <List key={work.id} {...work} />;
+                      return (
+                        <div key={work.id} className="space-y-2">
+                          <List key={work.id} {...work} />
+                          {shouldShowThumbnail && imageUrl && (
+                            <a href={work.url} target="_blank" rel="noopener noreferrer">
+                              <img
+                                src={imageUrl}
+                                alt={work.title || 'Work thumbnail'}
+                                className="w-75 md:w-125 mb-4 mx-auto object-contain"
+                              />
+                            </a>
+                          )}
+                        </div>
+                      );
                     }
                   })}
                 </div>

@@ -3,12 +3,12 @@ import { Link } from "react-router";
 import useWorkStore from "./Store/getWorks";
 
 const CATEGORIES = [
-  { label: "publish", path: "/publish" },
-  { label: "music", path: "/music" },
-  { label: "video", path: "/video" },
-  { label: "archive", path: "/archive" },
-  { label: "selected", path: "/selected" },
-  { label: "works", path: "/works" },
+  { label: "Publish", path: "/publish" },
+  { label: "Music", path: "/music" },
+  { label: "Video", path: "/video" },
+  { label: "Archive", path: "/archive" },
+  { label: "Selected", path: "/selected" },
+  { label: "Works", path: "/works" },
 ];
 
 const Nav = () => {
@@ -52,7 +52,7 @@ const Nav = () => {
     <nav className="w-full text-black font-[WrittingMimnimalist}">
       <div className="menu text-left w-full">
         <ul className="flex flex-col items-start w-full text-xl">
-          <NavItem to="/CV">cv</NavItem>
+          <NavItem to="/CV">CV</NavItem>
           {CATEGORIES.filter(({ label }) => hasWorkForCategory(label)).map(
             ({ label, path }) => (
               <NavItem key={path} to={path}>
