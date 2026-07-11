@@ -35,7 +35,7 @@ const DetailPage = () => {
         </div>
         <div className="text-area ">
           <div className="title text-xxs font-bold ">{work.title}</div>
-          <div className="date text-xxs mb-2 text-gray-400">{work.date?.slice(0, 10)}</div>
+          <div className="date text-xxs mb-2 text-gray-400">{work.date?.slice(0, 4)}</div>
           <div
             className="description leading-relaxed text-xxs w-max-[200px]"
             dangerouslySetInnerHTML={{ __html: work.description }}

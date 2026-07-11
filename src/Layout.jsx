@@ -8,15 +8,39 @@ import Body from './Body'
 import Header from './Header'
 import useProfileStore from './Store/getProfile'
 
+const faces = [
+  "/assets/gif/Face1.gif",
+  "/assets/gif/Face2.gif",
+  "/assets/gif/Face3.gif",
+  "/assets/gif/Face4.gif"
+];
+
 const Layout = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
   const { profile, fetchProfile } = useProfileStore();
   const [backgroundUrl, setBackgroundUrl] = useState("");
+  const [currentFaceIndex, setCurrentFaceIndex] = useState(0);
 
   useEffect(() => {
     fetchWorks();
     fetchProfile();
   }, [fetchWorks, fetchProfile]);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const changeFace = () => {
+      setCurrentFaceIndex((prev) => (prev + 1) % faces.length);
+      const nextDelay = Math.floor(Math.random() * (8000 - 6000 + 1)) + 2000;
+      timeoutId = setTimeout(changeFace, nextDelay);
+    };
+
+    const delay = Math.floor(Math.random() * (8000 - 6000 + 1)) + 2000;
+    timeoutId = setTimeout(changeFace, delay);
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, []);
 
   useEffect(() => {
     if (profile?.backgroundImages && Array.isArray(profile.backgroundImages) && profile.backgroundImages.length > 0) {
@@ -40,11 +64,13 @@ const Layout = () => {
     <div className="flex">
       <div className="w-[50px] shrink-0 sticky top-4 h-fit ml-4">
         <Nav />
-        <img
-          className="w-full mt-[5px]"
-          src="/assets/gif/Face1.gif"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            className="w-full mt-[5px]"
+            src={faces[currentFaceIndex]}
+            alt=""
+          />
+        </Link>
       </div>
 
       <div className="flex-1 ml-8">

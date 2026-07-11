@@ -44,6 +44,18 @@
   --layout-section-border: var(--border-width-default) solid var(--color-border-primary);
 }
 
+@media (max-width: 767px) {
+  :root {
+    --font-size-xxs: 0.6rem;
+    --font-size-xs: 0.65rem;
+    --font-size-sm: 0.75rem;
+    --font-size-base: 0.8rem;
+    --font-size-lg: 0.9rem;
+    --font-size-xl: 1rem;
+    --font-size-2xl: 1.2rem;
+  }
+}
+
 @layer utilities {
   .border-primary {
     @apply border border-border-primary;
