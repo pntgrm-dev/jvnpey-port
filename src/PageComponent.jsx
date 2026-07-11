@@ -58,9 +58,9 @@ const PageComponent = ({ title, children }) => {
             />
           </div>
           {!id && (
-            <div className="absolute z-10 left-[0px] md:left-[0px] top-[-10px] md:top-[-110px] pointer-events-none fixed">
+            <div className="absolute z-10 left-[100px] md:left-[60px] top-[50px] md:top-[30px] pointer-events-none fixed">
               <img
-                className="w-[600px] md:w-[600px] mb-10"
+                className="w-[300px] md:w-[500px] mb-10"
                 src="/assets/gif/Fly.gif"
                 alt=""
               />

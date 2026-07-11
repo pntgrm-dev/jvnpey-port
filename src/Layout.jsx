@@ -62,18 +62,18 @@ const Layout = () => {
 
   return (
     <div className="flex">
-      <div className="w-[50px] shrink-0 sticky top-4 h-fit ml-4">
+      <div className="w-[35px] md:w-[50px] shrink-0 sticky top-4 h-fit ml-4 md:ml-8">
         <Nav />
         <Link to="/">
           <img
-            className="w-full mt-[5px]"
+            className="w-full mt-[5px] ml-[-4px]"
             src={faces[currentFaceIndex]}
             alt=""
           />
         </Link>
       </div>
 
-      <div className="flex-1 ml-4">
+      <div className="flex-1 ml-4 md:ml-8">
         <Body />
       </div>
     </div>
