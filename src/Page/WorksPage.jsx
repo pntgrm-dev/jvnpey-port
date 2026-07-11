@@ -48,7 +48,7 @@ const WorksPage = ({ category }) => {
             sortedYears.map((year) => (
               <div key={year} className="year-section">
                 {showYear && (
-                  <div className="year-header text-xxs text-gray-600 my-[2px]">
+                  <div className="year-header text-xxs text-gray-400 my-[2px]">
                     {year}
                   </div>
                 )}
