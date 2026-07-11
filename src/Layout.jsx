@@ -73,7 +73,7 @@ const Layout = () => {
         </Link>
       </div>
 
-      <div className="flex-1 ml-8">
+      <div className="flex-1 ml-4">
         <Body />
       </div>
     </div>
