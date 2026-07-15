@@ -21,12 +21,10 @@ const CardVideo = (props) => {
   const videoLink = props.link || props.youtubelink || props.url;
 
   const youtubeId = getYoutubeId(videoLink, description);
-  const previewImageUrl = youtubeId
-    ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
-    : props.thumbnail?.url || props.thumbnail || null;
+  const previewImageUrl = props.thumbnail?.url 
 
   return (
-    <div className="card w-full max-w-[720px] group border-4 border-border-secondary">
+    <div className="card w-full max-w-[720px] group">
       <div className="relative w-full aspect-video flex items-center justify-center overflow-hidden bg-[#cacbcc]">
         <a
           href={videoLink || "#"}
