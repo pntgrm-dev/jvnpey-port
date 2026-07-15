@@ -43,7 +43,7 @@ const CardMusic = (props) => {
   const catName = Array.isArray(category) ? category[0] : (typeof category === 'object' ? category?.name : category) || 'music';
 
   return (
-    <div className="card w-full bg-[#cacbcc] m-auto border-x-8 border-y-8 border-[#393542] overflow-hidden flex flex-col font-sans text-black shadow-sm">
+    <div className="card w-full bg-[#cacbcc] m-auto  overflow-hidden flex flex-col font-sans text-black shadow-sm">
       {/* メインレイアウト部分: ジャケットとテキストの横並び (モバイルでは縦並び) */}
       <div className="flex flex-col md:flex-row gap-6 items-stretch">
         
@@ -92,15 +92,7 @@ const CardMusic = (props) => {
       </div>
 
       {/* 下部: オリーブグリーンのフッター帯 */}
-      <div className="w-full h-[28px] bg-[#6b7557] text-[#fef08a] px-4 flex justify-between items-center text-xxs  tracking-widest border-t border-[#393542]">
-        {/* 左側: ボリュームアイコン */}
-        <div className="flex items-center">
-          {/* <i className="fa-solid fa-volume-high text-xs"></i> */}
-        </div>
-        {/* 右側: フォーマット / 価格 / 年情報 */}
-        <div className="uppercase">
-          {footerRightText}
-        </div>
+      <div className="w-full h-[28px] px-4 flex justify-between items-center text-xxs  tracking-widest ">
       </div>
     </div>
   );
