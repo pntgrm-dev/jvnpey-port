@@ -8,7 +8,7 @@ const PageComponent = ({ title, children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isSelectedPage = location.pathname === "/selected" || category === "selected";
-  const pageTitle = title ? `${title} | jvnpey` : "jvnpey";
+  const pageTitle = title ? `jvnpey | ${title} ` : "jvnpey";
 
   const handleBack = () => {
     if (category) {
