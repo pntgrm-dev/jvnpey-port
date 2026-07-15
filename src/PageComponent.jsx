@@ -37,7 +37,7 @@ const PageComponent = ({ title, children }) => {
         }}
       >
         <div
-          className="relative shrink-0 self-stretch min-h-full -ml-[8px] w-[28px]  overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto] "
+          className="relative shrink-0 self-stretch min-h-full -ml-[9px] md:-ml-[8px] w-[28px]  overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto] "
           style={{
             backgroundImage: "url('/assets/note/notering_05.png')",
             backgroundRepeat: "no-repeat space",
