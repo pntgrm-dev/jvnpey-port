@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useLocation, useParams, useNavigate } from "react-router";
 import Nav from "./Nav";
 
@@ -7,6 +8,7 @@ const PageComponent = ({ title, children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const isSelectedPage = location.pathname === "/selected" || category === "selected";
+  const pageTitle = title ? `${title} | jvnpey` : "jvnpey";
 
   const handleBack = () => {
     if (category) {
@@ -17,7 +19,12 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)] my-2">
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageTitle} />
+      </Helmet>
+      <div className="relative flex  flex-col min-h-[calc(100dvh-2rem)] my-2">
       {/* <div className='text-left text-xxs my-2 border border-border-primary'>{title}</div> */}
       <div
         className="note/content relative flex flex-1 flex-row items-stretch gap-2  shadow-[0px_0px_10px_rgba(0,0,0,0.3)] mr-4 py-4"
@@ -82,7 +89,8 @@ const PageComponent = ({ title, children }) => {
           <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button>
         </div>
       )} */}
-    </div>
+      </div>
+    </>
   );
 };
 

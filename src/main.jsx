@@ -3,12 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Layout from './Layout.jsx'
 import { BrowserRouter } from 'react-router'
-
+import { HelmetProvider } from 'react-helmet-async'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Layout />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 )

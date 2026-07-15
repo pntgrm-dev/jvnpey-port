@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useWorkStore from '../Store/getWorks'
-import List from '../list'
+import useProfileStore from '../Store/getProfile'
 import PageComponent from '../PageComponent'
 
 const TopPage = () => {
   const { works, isLoading, error } = useWorkStore();
+  const { profile, fetchProfile } = useProfileStore();
+
+  useEffect(() => {
+    if (!profile) fetchProfile();
+  }, [fetchProfile, profile]);
+
   return (
-    <PageComponent title="">
+    <PageComponent title="Home">
+      <div className="p-4 space-y-4">
+        {profile?.Home && (
+          <div
+            className="prose prose-sm max-w-none text-black"
+            dangerouslySetInnerHTML={{ __html: profile.Home }}
+          />
+        )}
+      </div>
     </PageComponent>
   );
 }
