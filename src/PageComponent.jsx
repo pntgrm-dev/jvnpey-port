@@ -37,12 +37,14 @@ const PageComponent = ({ title, children }) => {
         }}
       >
         <div
-          className="relative shrink-0 self-stretch min-h-full -ml-[9px] md:-ml-[8px] w-[28px]  overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto] "
-          style={{
-            backgroundImage: "url('/assets/note/notering_05.png')",
-            backgroundRepeat: "no-repeat space",
-          }}
-        />
+  className="relative shrink-0 self-stretch min-h-full -ml-[9px] md:-ml-[8px] w-[28px] overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto]"
+  style={{
+    backgroundImage: "url('/assets/note/notering_05.png')",
+    // space から round に変更
+    backgroundRepeat: "no-repeat round", 
+  }}
+/>
+
 
         {/* <div className="shrink-0 w-[50px] z-30 pl-2 sticky top-4 h-fit self-start">
           <Nav />
