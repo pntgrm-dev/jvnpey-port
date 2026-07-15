@@ -1,47 +1,32 @@
 import React from "react";
-import { Link } from "react-router";
 
 const CardMusic = (props) => {
-  const { id, category, title, date, description, link, thumbnail } = props;
+  const {
+    id,
+    category,
+    title,
+    date,
+    description,
+    link,
+    thumbnail,
+    artistName,
+    albumName,
+    releaseYear,
+    subtitle,
+    year,
+  } = props;
 
-  // 1. 画像URLの取得 (thumbnailから取得)
   const imageUrl = thumbnail?.url || null;
+  const mainTitle = artistName || title || "Untitled";
+  const subTitle = albumName || subtitle || null;
+  const yearText = releaseYear || year || null;
 
-  // 2. descriptionから画像（figureタグやimgタグ）を削除してテキスト部分を残す
   let cleanDescription = description || "";
   if (cleanDescription) {
-    // figureタグとその中身を削除
-    cleanDescription = cleanDescription.replace(/<figure[^>]*>([\s\S]*?)<\/figure>/gi, '');
-    // 単体のimgタグも削除
-    cleanDescription = cleanDescription.replace(/<img[^>]*>/gi, '');
+    cleanDescription = cleanDescription.replace(/<figure[^>]*>([\s\S]*?)<\/figure>/gi, "");
+    cleanDescription = cleanDescription.replace(/<img[^>]*>/gi, "");
     cleanDescription = cleanDescription.trim();
   }
-
-  // 3. タイトルのパース (例: "Munch, EP, 2026")
-  const titleParts = title ? title.split(',').map(part => part.trim()) : [];
-  
-  // アーティスト名 / タイトル
-  const artistName = titleParts[0] || title || "Unknown Artist";
-  // アルバム名/フォーマット
-  const albumName = titleParts[1] || "";
-  // リリース年
-  const releaseYear = titleParts[2] || (date ? date.slice(0, 4) : "");
-
-  // 4. 下部フッターのテキスト表示 (例: "LP 180G $27.99")
-  let format = "LP";
-  if (albumName) {
-    format = albumName.toUpperCase();
-  } else if (title && title.toLowerCase().includes("12inch")) {
-    format = "12INCH";
-  } else if (title && title.toLowerCase().includes("ep")) {
-    format = "EP";
-  }
-
-  // 表示用テキストのフォーマット (例: "EP 2026")
-  const footerRightText = releaseYear ? `${format} ${releaseYear}` : format;
-
-  const catName = Array.isArray(category) ? category[0] : (typeof category === 'object' ? category?.name : category) || 'music';
-
   return (
     <div className="card w-full bg-[#cacbcc] m-auto  overflow-hidden flex flex-col font-sans text-black shadow-sm">
       {/* メインレイアウト部分: ジャケットとテキストの横並び (モバイルでは縦並び) */}
@@ -64,16 +49,13 @@ const CardMusic = (props) => {
 
         {/* 右側: テキスト情報 */}
         <div className="flex-1 flex flex-col justify-start text-left min-w-0 my-2">
-          {/* メインタイトル (アーティスト名) */}
-            <h2 className="text-lg font-bold tracking-tight leading-tight mb-1 text-black">
-              {artistName}
-            </h2>
+          <h2 className="text-lg font-bold tracking-tight leading-tight mb-1 text-black">
+            {mainTitle}
+          </h2>
 
-
-          {/* サブタイトル (アルバム名/作品名) */}
-          {albumName && (
-            <h3 className="text-sm text-[#333333]  leading-snug mb-1">
-              {albumName}
+          {subTitle && (
+            <h3 className="text-sm text-[#333333] leading-snug mb-1">
+              {subTitle}
             </h3>
           )}
 
@@ -91,8 +73,10 @@ const CardMusic = (props) => {
         </div>
       </div>
 
-      {/* 下部: オリーブグリーンのフッター帯 */}
-      <div className="w-full h-[28px] px-4 flex justify-between items-center text-xxs  tracking-widest ">
+      <div className="w-full h-[28px] px-4 flex justify-between items-center text-xxs tracking-wides bg-grey-100 border-t border-border-secondary">
+        {yearText && (
+          <span className="bg-amber-100">{yearText}</span>
+        )}
       </div>
     </div>
   );
