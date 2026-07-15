@@ -11,7 +11,7 @@ const CVPage = () => {
 
   return (
     <PageComponent title="CV">
-      <div className="p-4">
+      <div className="space-y-1">
         {isLoading && (
           <div className="text-white p-4 text-center">Loading...</div>
         )}
