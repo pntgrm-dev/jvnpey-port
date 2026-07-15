@@ -37,13 +37,13 @@ const PageComponent = ({ title, children }) => {
         }}
       >
         <div
-  className="relative shrink-0 self-stretch min-h-full -ml-[9px] md:-ml-[8px] w-[28px] overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto]"
-  style={{
-    backgroundImage: "url('/assets/note/notering_05.png')",
-    // space から round に変更
-    backgroundRepeat: "no-repeat round", 
-  }}
-/>
+        className="relative shrink-0 self-stretch min-h-full -ml-[9px] md:-ml-[8px] w-[28px] overflow-visible bg-top bg-center bg-[length:28px_auto] md:-ml-[14px] md:w-[44px] md:bg-[length:44px_auto]"
+        style={{
+          backgroundImage: "url('/assets/note/notering_05.png')",
+          // space から round に変更
+          backgroundRepeat: "no-repeat round", 
+        }}
+      />
 
 
         {/* <div className="shrink-0 w-[50px] z-30 pl-2 sticky top-4 h-fit self-start">
@@ -77,7 +77,7 @@ const PageComponent = ({ title, children }) => {
               />
             </div>
           )}
-          <div className="w-full max-w-full md:max-w-[550px] page-children overflow-x-hidden md:ml-2">{children}</div>
+          <div className="w-full max-w-full md:max-w-[550px] page-children overflow-x-hidden px-2">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>

@@ -37,7 +37,7 @@ const WorksPage = ({ category }) => {
 
   return (
     <PageComponent title={category ? `${category}` : "Works"}>
-      <div className="works-list">
+      <div className="works-list ">
         {isLoading && (
           <div className="p-4 text-center">Loading works...</div>
         )}
