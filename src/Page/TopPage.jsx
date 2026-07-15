@@ -13,7 +13,7 @@ const TopPage = () => {
 
   return (
     <PageComponent title="Home">
-      <div className="space-y-1">
+      <div className="space-y-1 px-2">
         {profile?.Home && (
           <div
             className="prose prose-sm max-w-none text-black"

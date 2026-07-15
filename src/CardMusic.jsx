@@ -72,7 +72,7 @@ const CardMusic = (props) => {
 
           {/* サブタイトル (アルバム名/作品名) */}
           {albumName && (
-            <h3 className="text-sm text-[#333333] font-medium leading-snug mb-1">
+            <h3 className="text-sm text-[#333333]  leading-snug mb-1">
               {albumName}
             </h3>
           )}
@@ -92,7 +92,7 @@ const CardMusic = (props) => {
       </div>
 
       {/* 下部: オリーブグリーンのフッター帯 */}
-      <div className="w-full h-[28px] bg-[#6b7557] text-[#fef08a] px-4 flex justify-between items-center text-xxs font-semibold tracking-widest border-t border-[#393542]">
+      <div className="w-full h-[28px] bg-[#6b7557] text-[#fef08a] px-4 flex justify-between items-center text-xxs  tracking-widest border-t border-[#393542]">
         {/* 左側: ボリュームアイコン */}
         <div className="flex items-center">
           {/* <i className="fa-solid fa-volume-high text-xs"></i> */}
