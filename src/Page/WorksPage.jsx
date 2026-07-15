@@ -77,7 +77,7 @@ const WorksPage = ({ category }) => {
                       return <CardMusic key={work.id} {...work} />;
                     } else {
                       return (
-                        <div key={work.id} className="space-y-2">
+                        <div key={work.id} className="space-y-2 ">
                           <List key={work.id} {...work} />
                           {shouldShowThumbnail && imageUrl && (
                             <Link

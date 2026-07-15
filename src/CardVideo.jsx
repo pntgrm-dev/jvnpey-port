@@ -36,7 +36,10 @@ const CardVideo = (props) => {
   );
 
   return (
-    <div className="card w-full max-w-[720px] group my-4">
+    <div className="card w-full max-w-[720px] group mb-4 ml-2">
+      <div className="text-area text-left flex gap-1 mb-1">
+        <div className="title text-xxs font-medium text-black">{title}</div>
+      </div>
       {videoLink ? (
         <a
           href={videoLink}
@@ -51,10 +54,6 @@ const CardVideo = (props) => {
           {thumbnailContent}
         </Link>
       )}
-
-      <div className="text-area px-2 py-1 text-left grid gap-4 items-baseline grid-cols-[auto_40px] bg-[#6b7557] border border-border-secondary">
-        <div className="title text-xxs font-medium text-black">{title}</div>
-      </div>
     </div>
   );
 };
