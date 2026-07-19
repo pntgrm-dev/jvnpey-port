@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router";
 import TopPage from "./Page/TopPage";
-import WorksPage from "./Page/WorksPage";
 import ContactPage from "./Page/ContactPage";
 import CVPage from "./Page/CVPage";
 import DetailPage from "./Page/DetailPage";
