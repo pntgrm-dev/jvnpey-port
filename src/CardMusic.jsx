@@ -8,9 +8,9 @@ const CardMusic = (props) => {
   const yearText = releaseYear || year || null;
 
   return (
-    <div className="w-full flex flex-col mb-4 items-start">
+    <div className="w-full flex flex-col items-start">
       {/* ジャケット画像 */}
-      <div className="w-[60px] h-[60px] md:w-[120px] md:h-[120px] bg-black flex items-center justify-center overflow-hidden">
+      <div className="w-[120px] h-[120px] bg-black flex items-center justify-center overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}

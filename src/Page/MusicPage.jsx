@@ -72,7 +72,7 @@ const MusicPage = () => {
                 <div key={year} className="year-section">
                   {/* Musicは年は非表示 */}
                   <div className="year-works">
-                    <div className={otherItems.length > 0 ? "grid grid-cols-2 gap-4 md:grid-cols-12 md:gap-6" : "grid grid-cols-1 md:grid-cols-12 md:gap-6"}>
+                    <div className={otherItems.length > 0 ? "grid grid-cols-2 gap-4 md:grid-cols-12 md:gap-6" : "grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-6"}>
                       {/* メインカラム */}
                       <div className={otherItems.length > 0 ? "col-span-1 md:col-span-8" : "col-span-1 md:col-span-12"}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4">

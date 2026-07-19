@@ -110,7 +110,7 @@ const WorksListPage = () => {
                           {mainGroups.map((group, gIdx) => {
                             if (group.type === 'music') {
                               return (
-                                <div key={gIdx} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4">
+                                <div key={gIdx} className={otherItems.length > 0 ? "grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4" : "grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4"}>
                                   {group.items.map((work) => (
                                     <CardMusic key={work.id} {...work} />
                                   ))}
@@ -137,7 +137,7 @@ const WorksListPage = () => {
                         {otherItems.length > 0 && (
                           <div className="col-span-1 md:col-span-4 mt-0 md:border-l md:border-gray-200 md:pl-6">
                             <div className="text-xxs text-gray-500 mb-4 tracking-wider uppercase">Other</div>
-                            <div className="flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4">
+                            <div className="flex flex-wrap gap-2 md:gap-4">
                               {otherItems.map((work) => (
                                 <CardMusic key={work.id} {...work} />
                               ))}
