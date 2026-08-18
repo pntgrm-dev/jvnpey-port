@@ -41,7 +41,7 @@ const ArchivePage = () => {
 
   return (
     <PageComponent title="archive">
-      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible'>
+      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible '>
         <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-2">
         {isLoading && <div className="p-4 text-center">Loading works...</div>}
         {error && <div className="p-4 text-center">Error: {error}</div>}
@@ -70,7 +70,7 @@ const ArchivePage = () => {
         )}
         </div>
 
-        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-4 md:pr-32" ref={detailRef}>
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-4 md:pr-10" ref={detailRef}>
         {selectedWork ? (
           <DetailComponent work={selectedWork} />
         ) : (
