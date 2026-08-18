@@ -228,6 +228,16 @@
   height: 0;
 }
 
+.title,
+.year-header,
+.works-list,
+.worksDetail {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
 body {
   background-color: #ffffff;
   background-image: url('/bg.png');

@@ -41,19 +41,19 @@ const ArchivePage = () => {
 
   return (
     <PageComponent title="archive">
-      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1'>
-        <div className="works-list hide-scrollbar flex-[0.78] min-w-0 py-2 overflow-y-auto h-full">
+      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible'>
+        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-2">
         {isLoading && <div className="p-4 text-center">Loading works...</div>}
         {error && <div className="p-4 text-center">Error: {error}</div>}
         {!isLoading && !error && (
           filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
-              <div key={year} className="year-section">
+              <div key={year} className="year-section w-full min-w-0">
                 {/* Archiveは年は表示 */}
-                <div className="year-header text-xxs text-gray-500 my-0.5">
+                <div className="year-header text-xxs text-gray-500 my-0.5 w-full min-w-0">
                   {year}
                 </div>
-                <div className="year-works">
+                <div className="year-works w-full min-w-0">
                   {groupedByYear[year].map((work) => (
                     <List 
                       key={work.id} 
@@ -70,11 +70,11 @@ const ArchivePage = () => {
         )}
         </div>
 
-        <div className="worksDetail hide-scrollbar flex-[1.22] min-w-0 py-2 overflow-y-auto h-full" ref={detailRef}>
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible" ref={detailRef}>
         {selectedWork ? (
           <DetailComponent work={selectedWork} />
         ) : (
-          <div className="text-xxs text-gray-400 text-center py-4">
+          <div className="text-xxs text-gray-400 taext-center py-4">
             ...
           </div>
           )}
