@@ -66,14 +66,14 @@ const Layout = () => {
         <Nav />
         <Link to="/">
           <img
-            className="w-[40px] mt-[5px]"
+            className="w-[30px] md:w-[50px] mt-[2px] md:mt-2"
             src={faces[currentFaceIndex]}
             alt=""
           />
         </Link>
       </div>
 
-      <div className="flex-1 ml-4 md:ml-8">
+      <div className="flex-1 ml-2 md:ml-6">
         <Body />
       </div>
     </div>

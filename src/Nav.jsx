@@ -49,7 +49,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="w-full text-black font-[WrittingMimnimalist}">
+    <nav className="w-full text-black font-[WrittingMimnimalist} ml-1">
       <div className="menu text-left w-full">
         <ul className="flex flex-col items-start w-full text-xl">
           <NavItem to="/CV">CV</NavItem>
