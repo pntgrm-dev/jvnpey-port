@@ -1,11 +1,12 @@
 import React from "react";
 
 const CardMusic = (props) => {
-  const { title, thumbnail, artistName, releaseYear, year } = props;
+  const { title, thumbnail, artistName, releaseYear, year, musiclink, musicLink } = props;
 
   const imageUrl = thumbnail?.url || null;
   const mainTitle = artistName || title || "Untitled";
   const yearText = releaseYear || year || null;
+  const linkUrl = musiclink || musicLink || null;
 
   return (
     <div className="w-full flex flex-col items-start">
@@ -23,9 +24,17 @@ const CardMusic = (props) => {
       </div>
 
       {/* タイトル */}
-      <h2 className="mt-2 text-sm md:text-base font-semibold text-left">
-        {mainTitle}
-      </h2>
+      {linkUrl ? (
+        <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+          <h2 className="mt-2 text-sm md:text-base font-semibold text-left hover:underline">
+            {mainTitle}
+          </h2>
+        </a>
+      ) : (
+        <h2 className="mt-2 text-sm md:text-base font-semibold text-left">
+          {mainTitle}
+        </h2>
+      )}
 
       {/* 年数 */}
       {yearText && (
