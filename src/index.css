@@ -34,7 +34,14 @@
 }
 
 @theme {
-  --font-size-xsm: 1rem; /* 10px */
+  --font-size-tiny: 0.5rem; /* 8px */
+  --font-size-xxs: 0.6rem; /* 9.6px */
+  --font-size-xs: 0.65rem; /* 10.4px */
+  --font-size-sm: 0.75rem; /* 12px */
+  --font-size-base: 0.8rem; /* 12.8px */
+  --font-size-lg: 0.9rem; /* 14.4px */
+  --font-size-xl: 1rem; /* 16px */
+  --font-size-2xl: 1.2rem; /* 19.2px */
   --spacing-1080: 1080px;
   --font-family-handwriting: "Writing Minimalist", "Gloria Hallelujah", cursive;
   --color-border-primary: #393542;
@@ -46,6 +53,7 @@
 
 @media (max-width: 767px) {
   :root {
+    --font-size-tiny: 0.5rem;
     --font-size-xxs: 0.6rem;
     --font-size-xs: 0.65rem;
     --font-size-sm: 0.75rem;
@@ -57,6 +65,10 @@
 }
 
 @layer utilities {
+  .text-tiny {
+    font-size: var(--font-size-tiny) !important;
+  }
+
   .border-primary {
     @apply border border-border-primary;
   }
