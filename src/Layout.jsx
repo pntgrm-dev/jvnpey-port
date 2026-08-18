@@ -61,12 +61,12 @@ const Layout = () => {
   console.log('Profile in Layout:', profile); // デバッグ用ログ
 
   return (
-    <div className="flex">
-      <div className="w-[35px] md:w-[50px] shrink-0 sticky top-4 h-fit ml-4 md:ml-8">
+    <div className="flex overflow-x-hidden">
+      <div className="w-[35px] md:w-[50px] shrink-0 sticky top-4 h-fit ml-2 md:ml-4">
         <Nav />
         <Link to="/">
           <img
-            className="w-full mt-[5px] ml-[-4px]"
+            className="w-[40px] mt-[5px]"
             src={faces[currentFaceIndex]}
             alt=""
           />
