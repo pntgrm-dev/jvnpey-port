@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import PageComponent from '../PageComponent'
 import { useParams } from 'react-router'
 import useWorkStore from '../Store/getWorks'
+import DetailComponent from '../DetailComponent'
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -17,38 +18,9 @@ const DetailPage = () => {
   if (isLoading) return <PageComponent title="Loading..."><div className="p-4 text-center">Loading...</div></PageComponent>;
   if (!work) return <PageComponent title="Not Found"><div className="p-4 text-center">Work not found.</div></PageComponent>;
 
-  const imageUrl = Array.isArray(work.img) ? work.img[0]?.url : work.img?.url || "/assets/image.jpg";
-
   return (
     <PageComponent title={work.title}>
-      <div className='max-w-4xl px-2'>
-        <div className="cover max-w-lg my-2">
-          {imageUrl && imageUrl !== "/assets/image.jpg" ? (
-            <img
-              src={imageUrl}
-              alt={work.title}
-              className="w-full h-auto"
-            />
-          ) : (
-            <div></div>
-          )}
-        </div>
-        <div className="text-area ">
-          <div className="title text-xxs font-bold ">{work.title}</div>
-          <div className="date text-xxs mb-2 text-gray-400">{work.date?.slice(0, 4)}</div>
-          <div
-            className="description leading-relaxed text-xxs w-max-[200px]"
-            dangerouslySetInnerHTML={{ __html: work.description }}
-          />
-          {/* {work.link && (
-            <div className="links mt-2 pt-2  border-black/10 text-xxs text-right">
-              <a href={work.link} target="_blank" rel="noopener noreferrer" className="hover:underline opacity-60">
-                Link: {work.link}
-              </a>
-            </div>
-          )} */}
-        </div>
-      </div>
+      <DetailComponent work={work} />
     </PageComponent>
   )
 }

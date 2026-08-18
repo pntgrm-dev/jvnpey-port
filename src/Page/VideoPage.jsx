@@ -31,11 +31,12 @@ const VideoPage = () => {
 
   return (
     <PageComponent title="video">
-      <div className="works-list">
+      <div className="works-list max-w-xl">
         {isLoading && <div className="p-4 text-center">Loading works...</div>}
         {error && <div className="p-4 text-center">Error: {error}</div>}
-        {!isLoading && !error && (
-          filteredWorks.length > 0 ? (
+        {!isLoading &&
+          !error &&
+          (filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
               <div key={year} className="year-section">
                 {/* Videoは年は表示 */}
@@ -51,8 +52,7 @@ const VideoPage = () => {
             ))
           ) : (
             <div className="p-4 text-center">表示できる作品がありません。</div>
-          )
-        )}
+          ))}
       </div>
     </PageComponent>
   );

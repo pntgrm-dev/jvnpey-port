@@ -4,7 +4,7 @@ import useWorkStore from '../Store/getWorks'
 import List from '../list'
 import PageComponent from '../PageComponent'
 
-const SelectedPage = () => {
+const ViewPage = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
 
   useEffect(() => {
@@ -15,8 +15,8 @@ const SelectedPage = () => {
     .filter((work) => {
       const workCats = Array.isArray(work.category) ? work.category : [work.category];
       return workCats.some(cat => 
-        (typeof cat === 'string' && cat.toLowerCase() === 'selected') ||
-        (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'selected')
+        (typeof cat === 'string' && cat.toLowerCase() === 'view') ||
+        (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'view')
       );
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -31,29 +31,28 @@ const SelectedPage = () => {
   const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   return (
-    <PageComponent title="selected">
-      <div className="works-list">
+    <PageComponent title="view">
+      <div className="works-list max-w-xl">
         {isLoading && <div className="p-4 text-center">Loading works...</div>}
         {error && <div className="p-4 text-center">Error: {error}</div>}
-        {!isLoading && !error && (
-          filteredWorks.length > 0 ? (
+        {!isLoading &&
+          !error &&
+          (filteredWorks.length > 0 ? (
             sortedYears.map((year) => (
               <div key={year} className="year-section">
-                {/* Selectedは年は非表示 */}
+                {/* Viewは年は非表示 */}
                 <div className="year-works">
                   {groupedByYear[year].map((work) => {
-                    const imageUrl = work.thumbnail?.url || work.thumbnail || null;
+                    const imageUrl =
+                      work.thumbnail?.url || work.thumbnail || null;
                     return (
                       <div key={work.id} className="space-y-2">
                         <List key={work.id} {...work} />
                         {imageUrl && (
-                          <Link
-                            to={`/selected/${work.id}`}
-                            className="block"
-                          >
+                          <Link to={`/view/${work.id}`} className="block">
                             <img
                               src={imageUrl}
-                              alt={work.title || 'Work thumbnail'}
+                              alt={work.title || "Work thumbnail"}
                               className="w-75 md:w-125 mb-4 mx-auto object-contain cursor-pointer"
                             />
                           </Link>
@@ -66,11 +65,10 @@ const SelectedPage = () => {
             ))
           ) : (
             <div className="p-4 text-center">表示できる作品がありません。</div>
-          )
-        )}
+          ))}
       </div>
     </PageComponent>
   );
 };
 
-export default SelectedPage;
+export default ViewPage;

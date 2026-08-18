@@ -7,7 +7,7 @@ const CATEGORIES = [
   { label: "Music", path: "/music" },
   { label: "Video", path: "/video" },
   { label: "Archive", path: "/archive" },
-  { label: "Selected", path: "/selected" },
+  { label: "View", path: "/view" },
   { label: "Works", path: "/works" },
 ];
 

@@ -7,7 +7,7 @@ const PageComponent = ({ title, children }) => {
   const { id, category } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-  const isSelectedPage = location.pathname === "/selected" || category === "selected";
+  const isViewPage = location.pathname === "/view" || category === "view";
   const pageTitle = title ? `jvnpey | ${title} ` : "jvnpey";
 
   const handleBack = () => {
@@ -51,7 +51,7 @@ const PageComponent = ({ title, children }) => {
           <img className="w-full mt-[5px]" src="/assets/gif/Face1.gif" alt="" />
         </div> */}
 
-        <div className="flex-1 min-w-0 pr-4 relative">
+        <div className="flex min-w-0 pr-4 relative">
           {id &&
             <div className="absolute top-0 right-4 pointer-events-none">
             <img
@@ -68,7 +68,7 @@ const PageComponent = ({ title, children }) => {
               alt=""
             />
           </div>
-          {!id && !isSelectedPage && (
+          {!id && !isViewPage && (
             <div className="absolute z-10 left-[60px] md:left-[180px] top-[0px] md:top-[30px] pointer-events-none fixed">
               <img
                 className="w-[300px] md:w-[500px] mb-10"
@@ -77,7 +77,7 @@ const PageComponent = ({ title, children }) => {
               />
             </div>
           )}
-          <div className="w-full max-w-full md:max-w-[550px] page-children overflow-x-hidden px-2">{children}</div>
+          <div className="w-full max-w-full md:max-w-[1080px] page-children overflow-x-hidden px-2">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
