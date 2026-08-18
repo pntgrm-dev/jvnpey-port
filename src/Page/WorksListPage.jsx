@@ -1,17 +1,24 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router'
+import React, { useEffect, useState, useRef } from 'react'
 import useWorkStore from '../Store/getWorks'
 import List from '../list'
-import CardVideo from '../CardVideo'
-import CardMusic from '../CardMusic'
 import PageComponent from '../PageComponent'
+import DetailComponent from '../DetailComponent'
 
 const WorksListPage = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
+  const [selectedWork, setSelectedWork] = useState(null);
+  const detailRef = useRef(null);
 
   useEffect(() => {
     if (works.length === 0) fetchWorks();
   }, [fetchWorks, works.length]);
+
+  const handleSelectWork = (work) => {
+    setSelectedWork(work);
+    setTimeout(() => {
+      detailRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const filteredWorks = works
     .filter((work) => {
@@ -34,126 +41,43 @@ const WorksListPage = () => {
 
   return (
     <PageComponent title="Works">
-      <div className="works-list">
-        {isLoading && <div className="p-4 text-center">Loading works...</div>}
-        {error && <div className="p-4 text-center">Error: {error}</div>}
-        {!isLoading && !error && (
-          filteredWorks.length > 0 ? (
-            sortedYears.map((year) => (
-              <div key={year} className="year-section">
-                {/* Worksは年は非表示 */}
-                <div className="year-works">
-                  {(() => {
-                    const items = groupedByYear[year];
-                    const mainItems = [];
-                    const otherItems = [];
-
-                    items.forEach((work) => {
-                      const workCats = Array.isArray(work.category) ? work.category : [work.category];
-                      const isVideo = workCats.some(cat => 
-                        (typeof cat === 'string' && cat.toLowerCase() === 'video') ||
-                        (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'video')
-                      );
-                      const isMusic = workCats.some(cat => 
-                        (typeof cat === 'string' && cat.toLowerCase() === 'music') ||
-                        (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'music')
-                      );
-                      const isPublish = workCats.some(cat => 
-                        (typeof cat === 'string' && cat.toLowerCase() === 'publish') ||
-                        (cat && typeof cat === 'object' && cat.name && cat.name.toLowerCase() === 'publish')
-                      );
-
-                      const cat = work.MusicCategory || work.musicCategory;
-                      const isOtherMusic = isMusic && !!(
-                        cat && (
-                          cat === 'Other' ||
-                          cat === 'other' ||
-                          cat?.id === 'other' ||
-                          cat?.value === 'Other' ||
-                          cat?.value === 'other' ||
-                          (Array.isArray(cat) && cat.some(item => 
-                            item === 'Other' || 
-                            item === 'other' || 
-                            item?.id === 'other' || 
-                            item?.value === 'Other' ||
-                            item?.value === 'other'
-                          )) ||
-                          (typeof cat === 'string' && cat.toLowerCase() === 'other')
-                        )
-                      );
-
-                      if (isOtherMusic) {
-                        otherItems.push(work);
-                      } else {
-                        mainItems.push({
-                          ...work,
-                          _type: isVideo ? 'video' : (isMusic || isPublish ? 'music' : 'other')
-                        });
-                      }
-                    });
-
-                    const mainGroups = [];
-                    let currentMainGroup = null;
-                    mainItems.forEach((item) => {
-                      if (currentMainGroup && currentMainGroup.type === item._type && item._type === 'music') {
-                        currentMainGroup.items.push(item);
-                      } else {
-                        currentMainGroup = { type: item._type, items: [item] };
-                        mainGroups.push(currentMainGroup);
-                      }
-                    });
-
-                    return (
-                      <div className={otherItems.length > 0 ? "grid grid-cols-2 gap-4 md:grid-cols-12 md:gap-6" : "grid grid-cols-1 md:grid-cols-12 md:gap-6"}>
-                        {/* メインカラム */}
-                        <div className={otherItems.length > 0 ? "col-span-1 md:col-span-8" : "col-span-1 md:col-span-12"}>
-                          {mainGroups.map((group, gIdx) => {
-                            if (group.type === 'music') {
-                              return (
-                                <div key={gIdx} className={otherItems.length > 0 ? "grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4" : "grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4"}>
-                                  {group.items.map((work) => (
-                                    <CardMusic key={work.id} {...work} />
-                                  ))}
-                                </div>
-                              );
-                            } else if (group.type === 'video') {
-                              return group.items.map((work) => (
-                                <CardVideo key={work.id} {...work} />
-                              ));
-                            } else {
-                              return group.items.map((work) => {
-                                const imageUrl = work.thumbnail?.url || work.thumbnail || null;
-                                return (
-                                  <div key={work.id} className="space-y-2">
-                                    <List key={work.id} {...work} />
-                                  </div>
-                                );
-                              });
-                            }
-                          })}
-                        </div>
-
-                        {/* Other カラム */}
-                        {otherItems.length > 0 && (
-                          <div className="col-span-1 md:col-span-4 mt-0 md:border-l md:border-gray-200 md:pl-6">
-                            <div className="text-xxs text-gray-500 mb-4 tracking-wider uppercase">Other</div>
-                            <div className="flex flex-wrap gap-2 md:gap-4">
-                              {otherItems.map((work) => (
-                                <CardMusic key={work.id} {...work} />
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })()}
+      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full max-w-full gap-1 overflow-x-hidden'>
+        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-hidden pr-2">
+          {isLoading && <div className="p-4 text-center">Loading works...</div>}
+          {error && <div className="p-4 text-center">Error: {error}</div>}
+          {!isLoading && !error && (
+            filteredWorks.length > 0 ? (
+              sortedYears.map((year) => (
+                <div key={year} className="year-section w-full min-w-0">
+                  <div className="year-header text-xxs text-gray-500 my-0.5 w-full min-w-0">
+                    {year}
+                  </div>
+                  <div className="year-works w-full min-w-0">
+                    {groupedByYear[year].map((work) => (
+                      <List
+                        key={work.id}
+                        {...work}
+                        onClick={() => handleSelectWork(work)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))
+              ))
+            ) : (
+              <div className="p-4 text-center">表示できる作品がありません。</div>
+            )
+          )}
+        </div>
+
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-hidden pr-1 md:pr-0" ref={detailRef}>
+          {selectedWork ? (
+            <DetailComponent work={selectedWork} />
           ) : (
-            <div className="p-4 text-center">表示できる作品がありません。</div>
-          )
-        )}
+            <div className="text-xxs text-gray-400 text-center py-4">
+              ...
+            </div>
+          )}
+        </div>
       </div>
     </PageComponent>
   );

@@ -6,7 +6,7 @@ const DetailComponent = ({ work }) => {
   const imageUrl = Array.isArray(work.img) ? work.img[0]?.url : work.img?.url || null;
 
   return (
-    <div className="max-w-4xl px-2">
+    <div className="md:max-w-md px-2">
       <div className="cover max-w-lg my-2">
         {imageUrl && imageUrl !== "/assets/image.jpg" ? (
           <img
