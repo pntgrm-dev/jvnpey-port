@@ -19,7 +19,7 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <>
+    <div className="page-content">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageTitle} />
@@ -77,7 +77,7 @@ const PageComponent = ({ title, children }) => {
               />
             </div>
           )}
-          <div className="w-full max-w-full md:max-w-[1080px] page-children overflow-x-hidden px-2">{children}</div>
+          <div className="w-full max-w-full md:max-w-[1080px] page-children overflow-x-hidden">{children}</div>
         </div>
         {/* <button onClick={handleBack} className="text-xxs opacity-60 hover:underline bg-none border-none cursor-pointer p-0">Back</button> */}
       </div>
@@ -92,7 +92,7 @@ const PageComponent = ({ title, children }) => {
         </div>
       )} */}
       </div>
-    </>
+    </div>
   );
 };
 
