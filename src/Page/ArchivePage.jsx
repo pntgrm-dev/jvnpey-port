@@ -70,7 +70,7 @@ const ArchivePage = () => {
         )}
         </div>
 
-        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-4 md:pr-10" ref={detailRef}>
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible" ref={detailRef}>
         {selectedWork ? (
           <DetailComponent work={selectedWork} />
         ) : (
