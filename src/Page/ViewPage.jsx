@@ -32,7 +32,7 @@ const ViewPage = () => {
 
   return (
     <PageComponent title="view">
-      <div className="works-list w-full max-w-lg min-w-0">
+      <div className="works-list w-full max-w-[760px] mx-auto min-w-0">
         {isLoading && <div className="p-4 text-center">Loading works...</div>}
         {error && <div className="p-4 text-center">Error: {error}</div>}
         {!isLoading &&
@@ -49,11 +49,11 @@ const ViewPage = () => {
                       <div key={work.id} className="space-y-2">
                         <List key={work.id} {...work} />
                         {imageUrl && (
-                          <Link to={`/view/${work.id}`} className="block w-full max-w-full">
+                          <Link to={`/view/${work.id}`} className="block w-full max-w-lg">
                             <img
                               src={imageUrl}
                               alt={work.title || "Work thumbnail"}
-                              className="w-full max-w-full md:max-w-[500px] mb-4 mx-auto object-contain cursor-pointer"
+                              className="w-full h-auto mb-4 mx-auto object-contain cursor-pointer"
                             />
                           </Link>
                         )}

@@ -10,6 +10,7 @@ import ArchivePage from "./Page/ArchivePage";
 import MusicPage from "./Page/MusicPage";
 import VideoPage from "./Page/VideoPage";
 import ViewPage from "./Page/ViewPage";
+import SeriesPage from "./Page/SriesPage";
 
 const Body = () => {
   return (
@@ -23,6 +24,7 @@ const Body = () => {
         <Route path="/archive" element={<ArchivePage />} />
         <Route path="/music" element={<MusicPage />} />
         <Route path="/video" element={<VideoPage />} />
+        <Route path="/video/series" element={<SeriesPage />} />
         <Route path="/view" element={<ViewPage />} />
         <Route path="/:category/:id" element={<DetailPage />} />
       </Routes>

@@ -1,14 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router'
 import useWorkStore from '../Store/getWorks'
-import CardVideo from '../CardVideo'
+import List from '../list'
 import PageComponent from '../PageComponent'
+import DetailComponent from '../DetailComponent'
 
 const VideoPage = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
+  const [selectedWork, setSelectedWork] = useState(null);
+  const detailRef = useRef(null);
 
   useEffect(() => {
     if (works.length === 0) fetchWorks();
   }, [fetchWorks, works.length]);
+
+  const handleSelectWork = (work) => {
+    setSelectedWork(work);
+    setTimeout(() => {
+      detailRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const filteredWorks = works
     .filter((work) => {
@@ -31,28 +42,48 @@ const VideoPage = () => {
 
   return (
     <PageComponent title="video">
-      <div className="works-list max-w-xl">
-        {isLoading && <div className="p-4 text-center">Loading works...</div>}
-        {error && <div className="p-4 text-center">Error: {error}</div>}
-        {!isLoading &&
-          !error &&
-          (filteredWorks.length > 0 ? (
-            sortedYears.map((year) => (
-              <div key={year} className="year-section">
-                {/* Videoは年は表示 */}
-                <div className="year-header text-xxs text-gray-500 my-0.5">
-                  {year}
+      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible '>
+        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-2">
+          {isLoading && <div className="p-4 text-center">Loading works...</div>}
+          {error && <div className="p-4 text-center">Error: {error}</div>}
+          {!isLoading && !error && (
+            filteredWorks.length > 0 ? (
+              sortedYears.map((year) => (
+                <div key={year} className="year-section w-full min-w-0">
+                  {/* Videoは年は表示 */}
+                  <div className="year-header text-xxs text-gray-500 my-0.5 w-full min-w-0">
+                    {year}
+                  </div>
+                  <div className="year-works w-full min-w-0">
+                    {groupedByYear[year].map((work) => (
+                      <List
+                        key={work.id}
+                        {...work}
+                        onClick={() => handleSelectWork(work)}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <div className="year-works">
-                  {groupedByYear[year].map((work) => (
-                    <CardVideo key={work.id} {...work} />
-                  ))}
-                </div>
-              </div>
-            ))
+              ))
+            ) : (
+              <div className="p-4 text-center">表示できる作品がありません。</div>
+            )
+          )}
+              <Link to="/video/series" className="text-xl font-bold my-2  underline text-blue-800">
+           Series
+          </Link>
+
+        </div>
+
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-1 md:pr-0" ref={detailRef}>
+          {selectedWork ? (
+            <DetailComponent work={selectedWork} />
           ) : (
-            <div className="p-4 text-center">表示できる作品がありません。</div>
-          ))}
+            <div className="text-xxs text-gray-400 taext-center py-4">
+              ...
+            </div>
+          )}
+        </div>
       </div>
     </PageComponent>
   );
