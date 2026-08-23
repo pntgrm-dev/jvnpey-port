@@ -14,6 +14,7 @@ const ViewPage = () => {
   }, [fetchWorks, works.length]);
 
   const handleSelectWork = (work) => {
+    if (selectedWork?.id === work.id) return;
     setSelectedWork(work);
     setTimeout(() => {
       detailRef.current?.scrollTo({ top: 0, behavior: 'smooth' });

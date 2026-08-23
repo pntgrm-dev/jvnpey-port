@@ -19,7 +19,7 @@ const PageComponent = ({ title, children }) => {
   };
 
   return (
-    <div className="page-content ">
+    <div className="page-content">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageTitle} />

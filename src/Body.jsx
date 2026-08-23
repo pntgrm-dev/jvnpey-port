@@ -14,7 +14,7 @@ import SeriesPage from "./Page/SriesPage";
 
 const Body = () => {
   return (
-    <div>
+    <div >
       <Routes>
         <Route path="/" element={<TopPage />} />
         <Route path="/CV" element={<CVPage />} />

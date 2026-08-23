@@ -15,6 +15,7 @@ const VideoPage = () => {
   }, [fetchWorks, works.length]);
 
   const handleSelectWork = (work) => {
+    if (selectedWork?.id === work.id) return;
     setSelectedWork(work);
     setTimeout(() => {
       detailRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
@@ -69,7 +70,7 @@ const VideoPage = () => {
               <div className="p-4 text-center">表示できる作品がありません。</div>
             )
           )}
-          
+
               {/* <Link to="/video/series" className="text-xl font-bold my-2  underline text-blue-800">
            Series
           </Link> */}
