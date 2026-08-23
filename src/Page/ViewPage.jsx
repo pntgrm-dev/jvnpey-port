@@ -1,15 +1,24 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router'
+import React, { useEffect, useState, useRef } from 'react'
 import useWorkStore from '../Store/getWorks'
 import List from '../list'
 import PageComponent from '../PageComponent'
+import DetailComponent from '../DetailComponent'
 
 const ViewPage = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
+  const [selectedWork, setSelectedWork] = useState(null);
+  const detailRef = useRef(null);
 
   useEffect(() => {
     if (works.length === 0) fetchWorks();
   }, [fetchWorks, works.length]);
+
+  const handleSelectWork = (work) => {
+    setSelectedWork(work);
+    setTimeout(() => {
+      detailRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const filteredWorks = works
     .filter((work) => {
@@ -32,40 +41,43 @@ const ViewPage = () => {
 
   return (
     <PageComponent title="view">
-      <div className="works-list w-full max-w-[760px] mx-auto min-w-0">
-        {isLoading && <div className="p-4 text-center">Loading works...</div>}
-        {error && <div className="p-4 text-center">Error: {error}</div>}
-        {!isLoading &&
-          !error &&
-          (filteredWorks.length > 0 ? (
-            sortedYears.map((year) => (
-              <div key={year} className="year-section">
-                {/* Viewは年は非表示 */}
-                <div className="year-works">
-                  {groupedByYear[year].map((work) => {
-                    const imageUrl =
-                      work.thumbnail?.url || work.thumbnail || null;
-                    return (
-                      <div key={work.id} className="space-y-2">
-                        <List key={work.id} {...work} />
-                        {imageUrl && (
-                          <Link to={`/view/${work.id}`} className="block w-full max-w-lg">
-                            <img
-                              src={imageUrl}
-                              alt={work.title || "Work thumbnail"}
-                              className="w-full h-auto mb-4 mx-auto object-contain cursor-pointer"
-                            />
-                          </Link>
-                        )}
-                      </div>
-                    );
-                  })}
+      <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible '>
+        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-2">
+          {isLoading && <div className="p-4 text-center">Loading works...</div>}
+          {error && <div className="p-4 text-center">Error: {error}</div>}
+          {!isLoading && !error && (
+            filteredWorks.length > 0 ? (
+              sortedYears.map((year) => (
+                <div key={year} className="year-section w-full min-w-0">
+                  <div className="year-header text-xxs text-gray-500 my-0.5 w-full min-w-0">
+                    {year}
+                  </div>
+                  <div className="year-works w-full min-w-0">
+                    {groupedByYear[year].map((work) => (
+                      <List
+                        key={work.id}
+                        {...work}
+                        onClick={() => handleSelectWork(work)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))
+              ))
+            ) : (
+              <div className="p-4 text-center">表示できる作品がありません。</div>
+            )
+          )}
+        </div>
+
+        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-1 md:pr-0" ref={detailRef}>
+          {selectedWork ? (
+            <DetailComponent work={selectedWork} />
           ) : (
-            <div className="p-4 text-center">表示できる作品がありません。</div>
-          ))}
+            <div className="text-xxs text-gray-400 taext-center py-4">
+              ...
+            </div>
+          )}
+        </div>
       </div>
     </PageComponent>
   );

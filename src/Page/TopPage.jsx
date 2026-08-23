@@ -13,10 +13,10 @@ const TopPage = () => {
 
   return (
     <PageComponent title="Home">
-      <div className="space-y-1 px-2">
+      <div className="space-y-1 px-2 max-w-lg min-w-0 ">
         {profile?.Home && (
           <div
-            className="prose prose-sm max-w-none text-black"
+            className="prose prose-sm  text-black"
             dangerouslySetInnerHTML={{ __html: profile.Home }}
           />
         )}

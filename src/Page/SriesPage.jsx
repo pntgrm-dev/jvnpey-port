@@ -5,7 +5,7 @@ import List from '../list'
 import PageComponent from '../PageComponent'
 import DetailComponent from '../DetailComponent'
 
-const VideoPage = () => {
+const SeriesPage = () => {
   const { works, fetchWorks, isLoading, error } = useWorkStore();
   const [selectedWork, setSelectedWork] = useState(null);
   const detailRef = useRef(null);
@@ -41,7 +41,7 @@ const VideoPage = () => {
   const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   return (
-    <PageComponent title="video">
+    <PageComponent title="Series">
       <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full gap-1 overflow-x-visible '>
         <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-2">
           {isLoading && <div className="p-4 text-center">Loading works...</div>}
@@ -50,7 +50,7 @@ const VideoPage = () => {
             filteredWorks.length > 0 ? (
               sortedYears.map((year) => (
                 <div key={year} className="year-section w-full min-w-0">
-                  {/* Videoは年は表示 */}
+                  {/* Seriesは年は表示 */}
                   <div className="year-header text-xxs text-gray-500 my-0.5 w-full min-w-0">
                     {year}
                   </div>
@@ -90,4 +90,4 @@ const VideoPage = () => {
   );
 };
 
-export default VideoPage;
+export default SeriesPage;
