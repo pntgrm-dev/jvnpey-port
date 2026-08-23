@@ -69,9 +69,10 @@ const VideoPage = () => {
               <div className="p-4 text-center">表示できる作品がありません。</div>
             )
           )}
-              <Link to="/video/series" className="text-xl font-bold my-2  underline text-blue-800">
+          
+              {/* <Link to="/video/series" className="text-xl font-bold my-2  underline text-blue-800">
            Series
-          </Link>
+          </Link> */}
 
         </div>
 
