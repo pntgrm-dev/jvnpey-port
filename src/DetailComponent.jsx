@@ -64,7 +64,7 @@ const DetailComponent = ({ work }) => {
       <div className="text-area">
         <div className="title text-xxs font-bold">{work.title}</div>
         {work.date && (
-          <div className="date text-xxs mb-2 text-gray-400">
+          <div className="date text-xxs mb-2 text-year-yellow">
             {work.date.slice(0, 4)}
           </div>
         )}

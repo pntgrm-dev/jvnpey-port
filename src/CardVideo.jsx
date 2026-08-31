@@ -38,7 +38,7 @@ const CardVideo = (props) => {
   return (
     <div className="card w-full max-w-[720px] group mb-4 ml-2">
       <div className="text-area text-left flex gap-1 mb-1">
-        <div className="title text-xxs font-medium text-black">{title}</div>
+        <div className="title text-xxs font-medium text-text-gray">{title}</div>
       </div>
       {videoLink ? (
         <a

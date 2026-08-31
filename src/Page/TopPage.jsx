@@ -16,7 +16,7 @@ const TopPage = () => {
       <div className="space-y-1 px-2 max-w-lg min-w-0 ">
         {profile?.Home && (
           <div
-            className="prose prose-sm  text-black"
+            className="prose prose-sm  text-text-gray"
             dangerouslySetInnerHTML={{ __html: profile.Home }}
           />
         )}

@@ -19,14 +19,14 @@ const CardMusic = (props) => {
             className="w-full h-full object-cover select-none"
           />
         ) : (
-          <div className="text-xs text-gray-500">No Image</div>
+          <div className="text-xs text-text-gray">No Image</div>
         )}
       </div>
 
       {/* タイトル */}
       {linkUrl ? (
-        <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-          <h2 className="mt-2 text-sm md:text-base font-semibold text-left hover:underline">
+        <a href={linkUrl} target="_blank" rel="noopener noreferrer" className="inline-block">
+          <h2 className="mt-2 text-sm md:text-base font-semibold text-left hover-band">
             {mainTitle}
           </h2>
         </a>
@@ -38,7 +38,7 @@ const CardMusic = (props) => {
 
       {/* 年数 */}
       {yearText && (
-        <p className="text-xs md:text-sm text-gray-600 text-left">{yearText}</p>
+        <p className="text-xs md:text-sm text-year-yellow text-left">{yearText}</p>
       )}
     </div>
   );

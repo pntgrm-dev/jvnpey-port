@@ -66,6 +66,13 @@
 
   --layout-section-border:
     var(--border-width-default) solid var(--color-border-primary);
+
+  --color-memo-bg: #1a1c25;
+  --color-text-gray: #8b8da0;
+  --color-link-blue: #0000ff;
+  --color-year-yellow: #949483;
+  --color-body-bg: #2f0e1f;
+  --color-hover-yellow: #a6851d;
 }
 
 
@@ -239,9 +246,9 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--color-body-bg);
   background-image: url('/bg.png');
-  color: #000000;
+  color: var(--color-text-gray);
   font-size: var(--font-size-base);
   margin: 0;
   padding: 0;
@@ -257,7 +264,28 @@ body {
 .page-children .description a:hover,
 .page-children .description a:active,
 .page-children .description a * {
-  color: #0000FF !important;
+  color: var(--color-link-blue) !important;
   text-decoration-color: inherit !important;
+}
+
+/* 制作年の文字色 */
+.year-header, .date {
+  color: var(--color-year-yellow) !important;
+}
+
+/* ホバー時の帯エフェクト */
+.hover-band {
+  display: inline-block;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  border-radius: 0.125rem;
+}
+.hover-band:hover {
+  background-color: var(--color-hover-yellow) !important;
+  color: #000000 !important;
+  text-decoration: none !important;
 }
 
