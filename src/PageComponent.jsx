@@ -52,7 +52,6 @@ const PageComponent = ({ title, children }) => {
         </div> */}
 
         <div className="flex min-w-0 w-full relative">
-          {id &&
             <div className="absolute top-0 right-4 pointer-events-none">
             <img
               className="w-[100px] md:w-[120px]"
@@ -60,7 +59,6 @@ const PageComponent = ({ title, children }) => {
               alt=""
             />
           </div>
-          }
           <div className="absolute md:bottom-[-25px] md:right-[-16px] bottom-[-22px] right-[-10px] pointer-events-none">
             <img
               className="w-[80px] md:w-[120px]"
