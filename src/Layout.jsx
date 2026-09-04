@@ -26,21 +26,8 @@ const Layout = () => {
     fetchProfile();
   }, [fetchWorks, fetchProfile]);
 
-  useEffect(() => {
-    let timeoutId;
-
-    const changeFace = () => {
-      setCurrentFaceIndex((prev) => (prev + 1) % faces.length);
-      const nextDelay = Math.floor(Math.random() * (8000 - 6000 + 1)) + 2000;
-      timeoutId = setTimeout(changeFace, nextDelay);
-    };
-
-    const delay = Math.floor(Math.random() * (8000 - 6000 + 1)) + 2000;
-    timeoutId = setTimeout(changeFace, delay);
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, []);
+  // Disable automatic face cycling to avoid causing re-renders that interrupt embedded media.
+  // Face remains static using initial `currentFaceIndex`.
 
   useEffect(() => {
     if (profile?.backgroundImages && Array.isArray(profile.backgroundImages) && profile.backgroundImages.length > 0) {
@@ -57,8 +44,7 @@ const Layout = () => {
     }
   }, [profile]);
 
-  console.log('Works in Layout:', works); // デバッグ用ログ
-  console.log('Profile in Layout:', profile); // デバッグ用ログ
+  // Removed verbose debug logs to avoid console activity during media playback
 
   return (
     <div className="flex overflow-x-hidden">

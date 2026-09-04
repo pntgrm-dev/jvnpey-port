@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 
 const normalizeEmbeddedYoutubeHtml = (html) => {
   if (!html || typeof html !== 'string') return html;
@@ -25,7 +25,9 @@ const normalizeEmbeddedYoutubeHtml = (html) => {
     const videoId = getYoutubeVideoId(src);
     if (!videoId) return null;
 
-    return `<iframe src="https://www.youtube.com/embed/${videoId}?rel=0" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe>`;
+    // Responsive embed wrapper: iframe will scale to container while preserving 16:9 aspect ratio
+    // Remove loading="lazy" to avoid lazy-loading behavior interfering with playback.
+    return `<div class="video-embed"><div class="video-embed-inner"><iframe src="https://www.youtube.com/embed/${videoId}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>`;
   };
 
   let normalizedHtml = html.replace(/<iframe\s+[^>]*src=["']([^"']+)["'][^>]*>/gi, (match, src) => {
@@ -46,7 +48,14 @@ const DetailComponent = ({ work }) => {
   if (!work) return null;
 
   const imageUrl = Array.isArray(work.img) ? work.img[0]?.url : work.img?.url || null;
-  const descriptionHtml = normalizeEmbeddedYoutubeHtml(work.description || '');
+  const descriptionHtml = useMemo(() => normalizeEmbeddedYoutubeHtml(work.description || ''), [work.description]);
+
+  useEffect(() => {
+    console.log('DetailComponent mounted for', work?.title);
+    return () => {
+      console.log('DetailComponent unmounted for', work?.title);
+    };
+  }, [work?.title]);
 
   return (
     <div className="md:max-w-md px-2">
@@ -70,7 +79,7 @@ const DetailComponent = ({ work }) => {
         )}
         {descriptionHtml && (
           <div
-            className="description leading-relaxed text-xxs w-max-[200px]"
+            className="description leading-relaxed text-xxs max-w-[200px]"
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
         )}

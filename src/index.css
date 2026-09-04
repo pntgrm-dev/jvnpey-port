@@ -224,6 +224,62 @@
   width: 100% !important;
 }
 
+/* Responsive YouTube embed wrapper */
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.video-embed .video-embed-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Prevent oversized text inside CMS-provided description blocks */
+.description a,
+.page-children .description a {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+.description h1,
+.description h2,
+.description h3,
+.description h4,
+.description h5,
+.description h6,
+.page-children .description h1,
+.page-children .description h2,
+.page-children .description h3,
+.page-children .description h4,
+.page-children .description h5,
+.page-children .description h6 {
+  font-size: inherit !important;
+  font-weight: bold !important;
+  margin: 0.5rem 0 !important;
+}
+
+/* Ensure iframe receives pointer events and is on top of any image placeholders */
+.video-embed,
+.video-embed .video-embed-inner,
+.video-embed iframe {
+  pointer-events: auto;
+}
+
 .hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
