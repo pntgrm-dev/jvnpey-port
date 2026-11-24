@@ -42,7 +42,7 @@ const WorksListPage = () => {
   return (
     <PageComponent title="Works">
       <div className='flex flex-row h-[calc(100dvh-4rem)] min-h-[450px] w-full max-w-full gap-1 overflow-x-hidden'>
-        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-hidden pr-2">
+        <div className="works-list hide-scrollbar flex-1 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-hidden ">
           {isLoading && <div className="p-4 text-center">Loading works...</div>}
           {error && <div className="p-4 text-center">Error: {error}</div>}
           {!isLoading && !error && (
@@ -69,7 +69,7 @@ const WorksListPage = () => {
           )}
         </div>
 
-        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-hidden pr-1 md:pr-0" ref={detailRef}>
+        <div className="worksDetail content-frame hide-scrollbar flex-[2] basis-0 min-w-0 py-2 px-2 overflow-y-auto h-full overflow-x-hidden" ref={detailRef}>
           {selectedWork ? (
             <DetailComponent work={selectedWork} />
           ) : (

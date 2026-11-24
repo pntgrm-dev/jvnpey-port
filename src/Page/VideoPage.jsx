@@ -77,7 +77,7 @@ const VideoPage = () => {
 
         </div>
 
-        <div className="worksDetail hide-scrollbar flex-3 basis-0 min-w-0 py-2 overflow-y-auto h-full overflow-x-visible pr-1 md:pr-0" ref={detailRef}>
+        <div className="worksDetail content-frame hide-scrollbar flex-[2] basis-0 min-w-0 py-2 px-2 overflow-y-auto h-full overflow-x-visible" ref={detailRef}>
           {selectedWork ? (
             <DetailComponent work={selectedWork} />
           ) : (
