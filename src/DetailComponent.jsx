@@ -70,7 +70,7 @@ const DetailComponent = ({ work }) => {
           <div></div>
         )}
       </div>
-      <div className="text-area">
+      <div className="text-area ">
         <div className="title text-xxs font-bold">{work.title}</div>
         {work.date && (
           <div className="date text-xxs mb-2 text-year-yellow">
